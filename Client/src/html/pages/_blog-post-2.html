@@ -1,0 +1,40 @@
+<div class="page-section {{ alt_bg }} border-bottom-2">
+  <div class="{{ containerClass }}">
+
+    <div class="d-flex flex-column flex-lg-row align-items-center">
+      <div class="d-flex flex-column flex-md-row align-items-center align-items-md-start flex mb-16pt mb-lg-0 text-center text-md-left">
+        {% include 'pages/_blog-post.heading.html' %}
+      </div>
+      <div class="ml-lg-16pt">
+        <a href="{{ prefix or '' }}blog.html" class="btn btn-light">Blog</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="page-section border-bottom-2">
+  <div class="{{ containerClass }}">
+    
+    <div class="row">
+      <div class="col-lg-8">
+
+        {% include 'partials/_blog-post.html' %}
+
+      </div>
+      <div class="col-lg-4">
+
+        {% include 'pages/_course.author.basic.html' %}
+        {% include 'pages/_blog.recommended.html' %}
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="page-section {{ alt_bg }}">
+  <div class="{{ containerClass or 'container' }}">
+    {% include 'pages/_feedback.html' %}
+  </div>
+</div>

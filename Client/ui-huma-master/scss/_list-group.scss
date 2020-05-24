@@ -1,0 +1,29 @@
+////////////////
+// LIST GROUP //
+////////////////
+
+.list-group {
+  @if $enable-card-shadow {
+    @include mdc-elevation(3, $card-shadow-base-color, $shadow-opacity-boost);
+  }
+
+  @include border-radius($list-group-border-radius);
+  margin-bottom: $spacer;
+}
+.list-group-flush {
+  #{$mdc-elevation-property}: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  > .list-group-item:not(.active) {
+    background: none;
+  }
+	> .list-group-item:first-child {
+		border-top: 0;
+	}
+	> .list-group-item:last-child {
+		border-bottom: 0;
+	}
+}
+.list-group-item.active a {
+	color: inherit;
+}

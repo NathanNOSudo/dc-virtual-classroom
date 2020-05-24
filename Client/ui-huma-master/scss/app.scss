@@ -1,0 +1,189 @@
+// @import url('https://fonts.googleapis.com/css?family=Exo+2:600&display=swap');
+
+@import './variables';
+
+//////////////////////////////////////////////////////////
+// @import 'bootstrap/scss/bootstrap';                  //
+// load files individually to avoid reloading variables //
+// temporary fix for custom $grid-breakpoints           //
+//////////////////////////////////////////////////////////
+
+@import 'bootstrap/scss/root';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/code';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/tables';
+@import 'bootstrap/scss/forms';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/dropdown';
+@import 'bootstrap/scss/button-group';
+@import 'bootstrap/scss/input-group';
+@import 'bootstrap/scss/custom-forms';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar';
+@import 'bootstrap/scss/card';
+@import 'bootstrap/scss/breadcrumb';
+@import 'bootstrap/scss/pagination';
+@import 'bootstrap/scss/badge';
+@import 'bootstrap/scss/jumbotron';
+@import 'bootstrap/scss/alert';
+@import 'bootstrap/scss/progress';
+@import 'bootstrap/scss/media';
+@import 'bootstrap/scss/list-group';
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/toasts';
+@import 'bootstrap/scss/modal';
+@import 'bootstrap/scss/tooltip';
+@import 'bootstrap/scss/popover';
+@import 'bootstrap/scss/carousel';
+@import 'bootstrap/scss/spinners';
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/print';
+
+/////////////
+// PLUGINS //
+/////////////
+
+@import 'bootstrap-custom-checkbox-toggle/bootstrap-custom-checkbox-toggle';
+@import 'bv-form-image-group/src/BvFormImageGroup';
+
+#settings {
+  .form-image-group {
+    flex-wrap: wrap !important;
+    &:focus {
+      outline: none;
+    }
+    .col {
+      margin-left: 0 !important;
+    }
+    .col:nth-child(even) {
+      margin-left: .5rem !important; 
+    }
+    .col:nth-child(1n+3) {
+      margin-top: .5rem !important; 
+    }
+    img {
+      width: 110px;
+    }
+  }
+}
+
+@import 'fm-plugin-flatpickr/scss/flatpickr';
+@import 'fm-plugin-chartjs/scss/chartjs';
+@import 'fm-avatar/avatar';
+@import 'fm-loader/loader';
+@import 'sass-math/math';
+@import 'corner-ribbon/sass/corner-ribbon';
+
+/////////
+// MDK //
+/////////
+
+@import 'material-design-kit/src/style';
+
+////////////
+// CUSTOM //
+////////////
+
+@import './helpers';
+@import './material-icons';
+@import './icon-holder';
+@import './type';
+@import './measure';
+@import './layout';
+@import './layout-app';
+@import './layout-mini';
+@import './layout-compact';
+@import './layout-boxed';
+@import './badge';
+@import './breadcrumb';
+@import './alert';
+@import './button';
+@import './card';
+@import './card-feedback';
+@import './card-header-tabs-basic';
+@import './popover';
+@import './image';
+@import './pagination';
+@import './rating';
+@import './table';
+@import './list-group';
+@import './media';
+@import './nav';
+@import './nav-tabs';
+@import './nav-tabs-card';
+@import './subnav';
+@import './avatar-group';
+
+@import './page-heading';
+@import './page-headline';
+@import './page-separator';
+@import './page-separator-mask';
+@import './page-section';
+@import './page-nav';
+@import './page-num';
+
+@import './progression-bar';
+@import './code';
+@import './tooltip';
+@import './chip';
+@import './brand';
+@import './carousel-card';
+
+@import './header';
+@import './hero';
+@import './box';
+
+@import './effects';
+@import './search';
+@import './stack';
+@import './footer';
+
+@import './form';
+@import './input-group';
+@import './input-group-merge';
+@import './custom-file-naked';
+@import './custom-radio-icon';
+@import './custom-select-icon';
+// @import './material-forms';
+
+@import './sidebar';
+@import './sidebar-dark';
+@import './sidebar-black';
+@import './sidebar-dark-purple';
+@import './sidebar-dark-blue';
+@import './sidebar-dark-dodger-blue';
+@import './sidebar-light';
+
+@import './navbar';
+@import './navbar-light';
+@import './navbar-dark';
+@import './navbar-dark-white';
+@import './navbar-black';
+@import './navbar-dark-blue';
+@import './navbar-dark-dodger-blue';
+@import './navbar-dark-purple';
+
+@import './dropdown';
+@import './dropdown-notifications';
+@import './overlay';
+
+@import './indicator-line';
+@import './maps';
+@import './dashboard-area-tabs';
+@import './dashboard-location-tabs';
+@import './todo';
+@import './skills';
+@import './posts';
+@import './menu-modal';
+@import './messages';
+
+@import './login-image';
+@import './login-centered-boxed';
+
+.ui .page__container {
+  max-width: 944px;
+}

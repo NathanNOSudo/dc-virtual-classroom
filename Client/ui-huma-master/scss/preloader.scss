@@ -1,0 +1,19 @@
+@import './variables';
+
+@import 'spinkit/scss/spinners/2-double-bounce';
+
+.preloader {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  position: fixed;
+  z-index: 99999;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  .sk-child {
+    background-color: #fff;
+  }
+}
