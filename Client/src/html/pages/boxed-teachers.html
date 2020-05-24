@@ -1,0 +1,12 @@
+---
+title: Browse Teachers
+slug: teachers
+guest: true
+---
+{% extends 'layouts/boxed.html' %}
+{% import 'layouts/_library-drawer.html' as drawer %}
+
+{% block drawer %}
+  {{ super() }}
+  {{ drawer.component() }}
+{% endblock %}

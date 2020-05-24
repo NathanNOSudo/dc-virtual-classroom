@@ -1,0 +1,45 @@
+{% macro component(prefix=prefix, heading, mb='16pt', items=[{
+  image: "assets/images/paths/invision_200x168.png",
+  title: "Design Systems Essentials",
+  views: 35,
+  tag: "inVision",
+  date: "11 Nov, 2018"
+}, {
+  title: "Semantic Logo Design",
+  image: "assets/images/paths/photoshop_200x168.png",
+  views: 78,
+  tag: "Photoshop",
+  date: "10 Nov, 2018"
+}, {
+  title: "Merge Duplicates Inconsistent Symbols & Styles",
+  image: "assets/images/paths/sketch_200x168.png",
+  views: 78,
+  tag: "Sketch",
+  date: "09 Nov, 2018"
+}]) %}
+
+{% if heading !== false %}
+<div class="page-separator">
+  <div class="page-separator__text">{{ heading or 'Recommended' }}</div>
+</div>
+{% endif %}
+
+{% for item in items %}
+<div class="mb-{% if loop.last %}{{ mb }}{% else %}8pt{% endif %} d-flex align-items-center">
+  <a href="{{ prefix or '' }}blog-post.html" class="avatar avatar-lg overlay overlay--primary mr-12pt">
+    <img src="{{ item.image }}" alt="{{ item.image }}" class="avatar-img rounded">
+    <span class="overlay__content"></span>
+  </a>
+  <div class="flex">
+    <a class="card-title mb-4pt" href="{{ prefix or '' }}blog-post.html">{{ item.title }}</a>
+    <div class="d-flex align-items-center">
+      <small class="text-muted mr-8pt"><a href="">{{ item.tag }}</a></small>
+      <small class="text-muted mr-8pt">{{ item.views }} Views</small>
+      <small class="text-muted">{{ item.date }}</small>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endmacro %}
+
+{{ component(prefix=prefix) }}

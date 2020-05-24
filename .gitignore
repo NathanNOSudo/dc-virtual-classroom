@@ -1,0 +1,5 @@
+.DS_Store
+/node_modules
+/Client/node_modules
+/Client//.idea
+/Server/node_modules
