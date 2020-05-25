@@ -1,0 +1,12 @@
+---
+title: Courses 
+slug: courses
+guest: true
+---
+{% extends 'layouts/mini-secondary.html' %}
+{% import 'layouts/_library-drawer.html' as drawer %}
+
+{% block drawer %}
+  {{ super() }}
+  {{ drawer.component() }}
+{% endblock %}
