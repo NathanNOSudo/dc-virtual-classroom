@@ -32,13 +32,13 @@ app.get("/", (req, res) => {
     res.render("main")
 })
 
+
 app.get("/register", (req, res) => {
     res.render("register")
 })
 // see Mr. Azam's video on Async and await if async and await is confusing. It's not complicated at all.
 // Async and await basically replaces .then() chaining
 // https://www.udemy.com/course/nodejs-complete-guide-to-building-data-driven-applications/learn/lecture/14311354#content
-
 app.post("/register", async (req, res) => {
     let fullName = req.body.fullName
     let email = req.body.email
@@ -106,6 +106,49 @@ app.post("/login", async (req, res) => {
     } else { //if the user is null
         res.render("login", {message: "Incorrect username or password"})
     }
+})
+
+
+app.get("/quiz_scor",(req,res)=>{
+    res.render("quiz_scor",{result: scor})
+})
+
+app.post("/quiz",(req,res)=>{
+    function check(){
+    let question1 = req.body.question1
+    let question2 = req.body.question2
+    let question3 = req.body.question3
+    let   correct = 0;
+    
+	if (question1 == "Providence") {
+		correct++;
+}
+	if (question2 == "Hartford") {
+		correct++;
+}	
+	if (question3 == "Albany") {
+		correct++;
+	}
+	
+	let score;
+
+	if (correct == 0) {
+		score = 2;
+	}
+
+	if (correct > 0 && correct < 3) {
+		score = 1;
+	}
+
+	if (correct == 3) {
+		score = 0;
+    }
+    
+
+    }
+    res.redirect("/quiz_scor")
+
+
 })
 
 app.listen(3000, () => {

@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "rwpqrflp",
-    "password": "H0pblctTB2UYBHp8QcnP2Coy7hCRVfka",
+    "username": "postgres",
+    "password": "test",
     "database": "rwpqrflp",
-    "host": "ruby.db.elephantsql.com",
+    "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   },
