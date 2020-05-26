@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     choice3: DataTypes.STRING,
     choice4: DataTypes.STRING,
     correct: DataTypes.STRING,
+    quizName: DataTypes.STRING,
     questionnum: DataTypes.INTEGER
   }, {});
   Quiz.associate = function(models) {

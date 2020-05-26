@@ -26,9 +26,6 @@ module.exports = {
       correct: {
         type: Sequelize.STRING
       },
-      questionnum: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
