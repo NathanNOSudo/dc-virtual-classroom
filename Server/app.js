@@ -109,24 +109,23 @@ app.post("/login", async (req, res) => {
 })
 
 
-app.get("/quiz_scor",(req,res)=>{
-    res.render("quiz_scor",{result: scor})
+app.get("/quiz",(req,res)=>{
+    res.render("quiz")
 })
 
 app.post("/quiz",(req,res)=>{
-    function check(){
     let question1 = req.body.question1
     let question2 = req.body.question2
     let question3 = req.body.question3
     let   correct = 0;
-    
-	if (question1 == "Providence") {
+
+	if (question1 == "Language") {
 		correct++;
 }
-	if (question2 == "Hartford") {
+	if (question2 == "Framework") {
 		correct++;
 }	
-	if (question3 == "Albany") {
+	if (question3 == "true_or_false") {
 		correct++;
 	}
 	
@@ -141,13 +140,10 @@ app.post("/quiz",(req,res)=>{
 	}
 
 	if (correct == 3) {
-		score = 0;
-    }
-    
+        score = 0;
 
     }
-    res.redirect("/quiz_scor")
-
+   res.render("quiz",{result:correct})
 
 })
 

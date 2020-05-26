@@ -1,10 +1,37 @@
 <html>
 <head>
 
-<title>Kevin's Kwiz!</title>
-<link href ="style.css" rel ="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<script src = "main.js"></script>
+<title>Quiz</title>
+<style>
+#quiz {
+	margin-left: 10px;
+	background: #d2def2;
+	padding: 10px 20px 10px 20px;
+	width: 400px;
+	border-radius: 20px;
+
+}
+
+button {
+	background: green;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	transition-duration: .5s;
+	margin-top: 15px;
+}
+
+button:hover {
+	background: white;
+	border: 1px solid green;
+	color: black;
+	cursor: pointer;
+
+}
+
+</style>
 
 </head>
 
@@ -12,31 +39,21 @@
 <body>
 <h1> quiz !</h1>
 
-
-<form id = "quiz" name = "quiz" method="POST" action="/quiz">
-
-
-<p class = "questions">What is the capital of Rhode Island?</p>
-<input id = "textbox" type = "text" name = "question1">
-
-<p class = "questions">What is the capital of Connecticut?</p>
-<input type = "radio" id = "mc" name = "question2" value = "Hartford"> Hartford<br>
-<input type = "radio" id = "mc" name = "question2" value = "Heartford"> Heartford<br>
-
-<p class = "questions">What is the capital of New York?</p>
-
-<input type = "radio" id = "mc" name = "question3" value = "Albany"> Albany<br>
-<input type = "radio" id = "mc" name = "question3" value = "All Benny's"> All Benny's<br>
+<form id="quiz" action="/quiz" method="POST">
+<h1> your result is {{result}}
 
 
-<input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
+<p class = "questions">Javascript is a Programing...</p>
+<input id = "textbox" type ="text" name="question1">
 
+<p class = "questions">React is Javascript...</p>
+<input type = "radio"  name ="question2" value = "Framework"> Framework<br>
+<input type = "radio"  name ="question2" value = "Heartford"> Heartford<br>
 
+<p class = "questions">Boolean in Javascript is ?</p>
+<input type = "radio" name  ="question3" value = "true_or_false"> true_or_false<br>
+<input type = "radio" name  ="question3" value = "All Benny's"> All Benny's<br>
+<button  >Submit </button>
 </form>
 
-<div id = "after_submit">
-<p id = "number_correct"></p>
-<p id = "message"></p>
-<img id = "picture">
-</div>
 </html>
