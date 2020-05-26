@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Quiz = sequelize.define('Quiz', {
+  const quiz = sequelize.define('quiz', {
     question: DataTypes.STRING,
     choice1: DataTypes.STRING,
     choice2: DataTypes.STRING,
@@ -10,9 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     quizName: DataTypes.STRING,
     questionnum: DataTypes.INTEGER
   }, {});
-  Quiz.associate = function(models) {
+  quiz.associate = function(models) {
+    quiz.hasMany(models.studentQuizComplete, {foreignKey: "quiz_id"})
     // associations can be defined here
     // This is how to link to other tables
   };
-  return Quiz;
+  return quiz;
 };
