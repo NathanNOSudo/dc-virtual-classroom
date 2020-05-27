@@ -18,7 +18,6 @@ app.use(session({
 }))
 
 const VIEWS_PATH = path.join(__dirname, '/views')
-global.__basedir = __dirname
 
 app.use(express.urlencoded())
 
@@ -44,6 +43,6 @@ app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 app.set("views", VIEWS_PATH)
 app.set("view engine", "mustache")
 
-app.listen(3002, () => {
-    console.log("Server is running on http://localhost:3002")
+app.listen(3000, () => {
+    console.log("Server is running on http://localhost:3000")
 })
