@@ -10,4 +10,4 @@ module.exports = (sequelize, DataTypes) => {
     completedquizes.belongsTo(models.user, {foreignKey: "studentId"})
     completedquizes.belongsTo(models.quiz, {foreignKey: "quizId"})
   };
-  return completedquizes;
+  return completedquizes;}
