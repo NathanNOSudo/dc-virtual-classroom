@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     choice4: DataTypes.STRING,
     correct: DataTypes.STRING,
     quizName: DataTypes.STRING,
-    questionnum: DataTypes.INTEGER
+    questionnum: DataTypes.INTEGER,
+    assignedTo: DataTypes.STRING
   }, {});
   Quiz.associate = function(models) {
     // associations can be defined here

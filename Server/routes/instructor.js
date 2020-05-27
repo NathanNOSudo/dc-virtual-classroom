@@ -23,35 +23,29 @@ router.get("/instructor-quizzes", async (req, res) => {
     res.render("instructor/instructor-quizzes", quiz.dataValues)
 })
 
-router.get("/instructor-quizzes/:quizzes"), async (req, res) => {
-    const quizzes = req.params.quizzes
+router.get("/instructor-quizzes/:id"), async (req, res) => {
+    const quizId = req.params.id
     const quiz = await models.Quiz.findOne({
         where: {
-            id: 11
+            id: quizId
         }
     })
 
     console.log(quiz.dataValues)
 
-    res.render("/")
+    res.render(`instructor-quizzes/instructor-quizzes/${quizId}`)
 }
-
-// router.post("/instructor-quizzes", async (req, res) => {
-
-//     res.render("instructor/instructor-quizzes")
-// })
-
-router.get("/instructor-create-quiz", (req, res) => {
-    res.render("instructor/instructor-create-quiz")
-})
 
 router.get("/instructor-edit-course", (req, res) => {
     res.render("instructor/instructor-edit-course")
 })
-router.get("/instructor-edit-quiz", async (req, res) => {
+
+// EDIT quiz functionality
+router.get("/instructor-edit-quiz/:id", async (req, res) => {
+    let quizId = req.params.id
     const quiz = await models.Quiz.findOne({
         where: {
-            id: 11
+            id: quizId
         }
     })
     console.log(quiz.dataValues)
@@ -59,40 +53,59 @@ router.get("/instructor-edit-quiz", async (req, res) => {
     res.render("instructor/instructor-edit-quiz", quiz.dataValues)
 })
 
-router.post("/update-quiz-answer", async (req, res) => {
+router.post("/update-quiz-answer/:id", async (req, res) => {
     const correctAnswer = req.body.correctAnswer
-
+    const quizId = req.params.id
+    
     const updatedQuiz = await models.Quiz.update({
         correct: correctAnswer
     }, {
         where: {
-            quizName: "New Quiz"
+            id: quizId
         }
     })
 
-    res.redirect("instructor/instructor-edit-quiz")
+    res.render(`instructor/instructor-edit-quiz/${quizId}`)
 })
 
-// router.post("/instructor-edit-quiz", (req, res) => {
+router.post("/update-title-name/:id", async (req, res) => {
+    let quizId = req.params.id
+    let quizName = req.body.quizName
+    const updatedQuizName = await models.Quiz.update({
+        question: quizName
+    }, {
+        where: {
+            id: quizId
+        }
+    })
 
-//     let persistedQuiz = await quiz.save()
-//     if (persistedQuiz != null) {
-//         res.redirect("/instructor/instructor-edit-quiz")
-//     } else {
-//         res.render("instructor/instructor-create-quiz")
-//     }
-// })
-
-router.post("/update-title-name", (req, res) => {
-    res.render("instructor/instructor-edit-quiz")
+    res.redirect(`/instructor/instructor-edit-quiz/${quizId}`)
 })
 
-router.post("/update-title-name", (req, res) => {
-    res.render("instructor/instructor-edit-quiz")
-})
+// Create Quiz
+router.get("/instructor-create-quiz", async (req, res) => {
+    // let users = []
+    
+    // models.User.findAll()
+    //     .then((results) => {
+    //         results.forEach((ele => users.push(ele.dataValues.username)))
+    // }).then(() => {
+    //     console.log(users)
+    // })
+    // console.log(myUsers)
 
-router.post("/update-title-name", (req, res) => {
-    res.render("instructor/instructor-edit-quiz")
+    let myUsers = await models.User.findAll()
+
+    let userIds = myUsers.map((ele) => ele.dataValues.username)
+    
+    console.log(userIds)
+    // console.log(myUsers.dataValues.username)
+
+
+
+    // res.render("instructor/instructor-create-quiz", myUsers.dataValues)
+
+    res.render("instructor/instructor-create-quiz", userIds)
 })
 
 router.post("/instructor-create-quiz", async (req, res) => {
@@ -104,6 +117,19 @@ router.post("/instructor-create-quiz", async (req, res) => {
     const choiceD = req.body.choiceD
     const correctAnswer = req.body.correctAnswer
     const question = req.body.questionField
+    const emailAdd = req.body.emailAdd
+    const studentId = req.body.studentId
+    const sessionId = req.session.user
+    // assign to a student
+
+
+    const userObject = await models.User.findOne({
+        where: {
+            username: emailAdd
+        }
+    })
+
+    let userId = userObject.dataValues.id
 
     let quiz = models.Quiz.build({
         choice1: choiceA,
@@ -113,15 +139,16 @@ router.post("/instructor-create-quiz", async (req, res) => {
         correct: correctAnswer,
         question: questionField,
         quizName: quizTitle,
-        question: question
+        question: question,
+        assignedTo: userId
     })
 
     let persistedQuiz = await quiz.save()
-    
+
     if (persistedQuiz != null) {
         res.redirect('/instructor/instructor-quizzes')
     } else {
-        res.render('instructor/instructor-create-quiz', { message: 'Unable to add quiz' })
+        res.render('/instructor/instructor-create-quiz', { message: 'Unable to add quiz' })
     }
 })
 

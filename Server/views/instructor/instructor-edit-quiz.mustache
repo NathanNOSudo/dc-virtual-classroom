@@ -13,35 +13,34 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
 
     <!-- Perfect Scrollbar -->
-    <link type="text/css" href="../assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/vendor/perfect-scrollbar.css" rel="stylesheet">
 
     <!-- Fix Footer CSS -->
-    <link type="text/css" href="../assets/vendor/fix-footer.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/vendor/fix-footer.css" rel="stylesheet">
 
     <!-- Material Design Icons -->
-    <link type="text/css" href="../assets/css/material-icons.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/css/material-icons.css" rel="stylesheet">
 
 
     <!-- Font Awesome Icons -->
-    <link type="text/css" href="../assets/css/fontawesome.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/css/fontawesome.css" rel="stylesheet">
 
 
     <!-- Preloader -->
-    <link type="text/css" href="../assets/css/preloader.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/css/preloader.css" rel="stylesheet">
 
 
     <!-- App CSS -->
-    <link type="text/css" href="../assets/css/app.css" rel="stylesheet">
-
+    <link type="text/css" href="../../assets/css/app.css" rel="stylesheet">
 
 
     <!-- Quill Theme -->
-    <link type="text/css" href="../assets/css/quill.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/css/quill.css" rel="stylesheet">
 
     <!-- Select2 -->
-    <link type="text/css" href="../assets/css/select2.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/css/select2.css" rel="stylesheet">
 
-    <link type="text/css" href="../assets/vendor/select2/select2.min.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/vendor/select2/select2.min.css" rel="stylesheet">
 
 </head>
 
@@ -87,7 +86,7 @@
                             <div class="page-separator">
                                 <div class="page-separator__text">Quiz Name</div>
                             </div>
-                            <form method="POST" action="/instructor/update-title-name">   
+                            <form method="POST" action="/instructor/update-title-name/{{id}}">   
                                 <input type="text" name="quizName" value="{{quizName}}" placeholder="Quiz Title">
                                 <input type="hidden" name="quizId">
                                 <button type="submit">Save Title Name</button>
@@ -130,7 +129,7 @@
                                         <div class="page-separator" style="margin-top: 1rem;">
                                             <div class="page-separator__text">Correct Answer</div>
                                         </div>
-                                            <form method="POST" action="/update-quiz-answer">
+                                            <form method="POST" action="/instructor/update-quiz-answer/{{id}}">
                                             <div class="form-row align-items-center">
                                                 <div class="col-auto my-1">
                                                 <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="correctAnswer">
@@ -166,7 +165,7 @@
                                 <div class="page-separator__text">New Question</div>
                             </div>
                             <div class="card card-body">
-                                <form method="POST" action="/instructor/instructor-edit-quiz">   
+                                <form method="POST" action="/instructor/instructor-edit-quiz/{{id}}">   
                                     <div class="form-group">
                                         <label class="form-label">Question</label>
                                         <div style="height: 150px;" class="mb-0" data-toggle="quill" data-quill-placeholder="Question" name="questionField">
@@ -235,8 +234,8 @@
                                     <div class="form-group mb-0">
                                         <label class="form-label">Add to course</label>
                                         <select name="course" id="course" data-toggle="select" data-tags="true" data-multiple="true" multiple="multiple" data-minimum-results-for-search="-1" class="form-control" data-placeholder="Select course ...">
-                                            <option data-avatar-src="../assets/images/paths/angular_40x40@2x.png" selected="">Angular Fundamentals</option>
-                                            <option data-avatar-src="../assets/images/paths/swift_40x40@2x.png">Build an iOS Application in Swift</option>
+                                            <option data-avatar-src="../../assets/images/paths/angular_40x40@2x.png" selected="">Angular Fundamentals</option>
+                                            <option data-avatar-src="../../assets/images/paths/swift_40x40@2x.png">Build an iOS Application in Swift</option>
                                         </select>
                                     </div>
                                 </div>
@@ -266,37 +265,37 @@
 
 
     <!-- jQuery -->
-    <script src="../assets/vendor/jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="../assets/vendor/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap.min.js"></script>
+    <script src="../../assets/vendor/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap.min.js"></script>
 
     <!-- Perfect Scrollbar -->
-    <script src="../assets/vendor/perfect-scrollbar.min.js"></script>
+    <script src="../../assets/vendor/perfect-scrollbar.min.js"></script>
 
     <!-- DOM Factory -->
-    <script src="../assets/vendor/dom-factory.js"></script>
+    <script src="../../assets/vendor/dom-factory.js"></script>
 
     <!-- MDK -->
-    <script src="../assets/vendor/material-design-kit.js"></script>
+    <script src="../../assets/vendor/material-design-kit.js"></script>
 
     <!-- Fix Footer -->
-    <script src="../assets/vendor/fix-footer.js"></script>
+    <script src="../../assets/vendor/fix-footer.js"></script>
 
     <!-- App JS -->
-    <script src="../assets/js/app.js"></script>
+    <script src="../../assets/js/app.js"></script>
 
 
     <!-- Quill -->
-    <script src="../assets/vendor/quill.min.js"></script>
-    <script src="../assets/js/quill.js"></script>
+    <script src="../../assets/vendor/quill.min.js"></script>
+    <script src="../../assets/js/quill.js"></script>
     <!-- Select2 -->
-    <script src="../assets/vendor/select2/select2.min.js"></script>
-    <script src="../assets/js/select2.js"></script>
+    <script src="../../assets/vendor/select2/select2.min.js"></script>
+    <script src="../../assets/js/select2.js"></script>
 
     <!-- Highlight.js -->
-    <script src="../assets/js/hljs.js"></script>
+    <script src="../../assets/js/hljs.js"></script>
 
 </body>
 
