@@ -13,17 +13,29 @@ router.get("/instructor-dash", (req, res) => {
 router.get("/instructor-courses", (req, res) => {
     res.render("instructor/instructor-courses")
 })
+
+// router.get("/instructor-quizzes/quizId", (req, res) => {
+//     // const quizId = req.params.id
+//     // const quiz = await models.Quiz.findOne({
+//     //     where: {
+//     //         id: quizId
+//     //     }
+//     // })
+
+//     console.log("hello world")
+
+//     res.render(`instructor/instructor-quizzes/${quizId}`)
+// })
+
 router.get("/instructor-quizzes", async (req, res) => {
-    const quiz = await models.Quiz.findOne({
-        where: {
-            id: 11
-        }
-    })
-    console.log(quiz.dataValues)
-    res.render("instructor/instructor-quizzes", quiz.dataValues)
+    const quiz = await models.Quiz.findAll()
+    const quizValues = quiz.map((ele) => ele.dataValues)
+    console.log(quizValues)
+
+    res.render("instructor/instructor-quizzes", { quizzes: quizValues })
 })
 
-router.get("/instructor-quizzes/:id"), async (req, res) => {
+router.get("/instructor-quizzes/:id", async (req, res) => {
     const quizId = req.params.id
     const quiz = await models.Quiz.findOne({
         where: {
@@ -31,10 +43,10 @@ router.get("/instructor-quizzes/:id"), async (req, res) => {
         }
     })
 
-    console.log(quiz.dataValues)
+    console.log(quiz)
 
-    res.render(`instructor-quizzes/instructor-quizzes/${quizId}`)
-}
+    res.render("instructor/instructor-quiz", quiz.dataValues)
+})
 
 router.get("/instructor-edit-course", (req, res) => {
     res.render("instructor/instructor-edit-course")
