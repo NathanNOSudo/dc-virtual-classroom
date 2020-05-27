@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    {{> header}}
+    <title>Register for DC LMS</title>
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    {{> preloader}}
+
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+        <!-- Header -->
+        <!-- // END Header -->
+
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+            <div class="py-32pt navbar-submenu">
+                <div class="container page__container">
+                    <div class="progression-bar progression-bar--active-accent">
+                        <a href="signup" class="progression-bar__item progression-bar__item--complete progression-bar__item--active">
+                            <span class="progression-bar__item-content">
+                                <i class="material-icons progression-bar__item-icon"></i>
+                                <span class="progression-bar__item-text h5 mb-0 text-uppercase">Account details</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="page-section container page__container">
+                <div class="col-lg-10 p-0 mx-auto">
+                    <div class="row">
+                        <div class="col-md-6 mb-24pt mb-md-0">
+                            <form action="/register" method="POST">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Your first and last name:</label>
+                                    <input id="name" type="text" name="fullName"class="form-control" placeholder="Your first and last name ...">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Your email:</label>
+                                    <input id="email" name="email" type="email" class="form-control" placeholder="Your email address ...">
+                                </div>
+                                <div class="form-group mb-24pt">
+                                    <label class="form-label" for="password">Password:</label>
+                                    <input id="password" name="password" type="password" class="form-control" placeholder="Your password ...">
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" checked id="topic-all">
+                                    <label class="custom-control-label">Terms and conditions</label>
+                                    <small class="form-text text-muted">By checking here and continuing, I agree to the Luma Terms of Use</small>
+                                </div>
+                                <button class="btn btn-primary">Create account</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // END Header Layout Content -->
+
+        <!-- Footer Content -->
+        {{> footer}}
+
+        <!-- // END Footer Content -->
+    </div>
+    <!-- // END Header Layout -->
+    <!-- drawer -->
+    {{> drawer}}
+    <!-- // END drawer -->
+
+
+    <!-- jQuery -->
+    <script src="assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/vendor/popper.min.js"></script>
+    <script src="assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="assets/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="assets/vendor/material-design-kit.js"></script>
+
+    <!-- Fix Footer -->
+    <script src="assets/vendor/fix-footer.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
