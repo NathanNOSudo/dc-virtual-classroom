@@ -128,6 +128,30 @@
                                         <label class="form-label" for="select01">Correct Answer</label>
                                         <input type="text" class="form-control" placeholder="Correct Answer (A, B, C, D)" name="correctAnswer" required>
                                     </div>
+                                    <div class="page-separator">
+                                        <div class="page-separator__text">Assign to student</div>
+                                    </div>
+                                        <div class="form-group">
+                                            <label class="form-label" for="select01">Assign to student</label>
+                                            <input type="email" class="form-control" placeholder="Student Email Address" name="emailAdd" required>
+                                        </div>
+                                    </div>
+
+                                    <!-- {{#myUsers}}
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input id="customCheck01" type="checkbox" class="custom-control-input">
+                                            <label for="customCheck01" class="custom-control-label">{{username}}</label>
+                                        </div>
+                                    </div>
+                                    {{/myUsers}} -->
+                                        <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Assign to Student</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="emailAddress">
+                                            <option selected>Select student...</option>
+                                            {{#users}}
+                                                <option>{{username}}</option>
+                                            {{/users}}
+                                    </div> -->
                                     <div>
                                         <button class="btn btn-accent" type="submit"> Create Quiz </button>
                                     </div>
