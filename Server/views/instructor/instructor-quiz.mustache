@@ -160,54 +160,6 @@
                                     </div>
                                 </li>
                             </ul>
-
-                            <div class="page-separator">
-                                <div class="page-separator__text">New Question</div>
-                            </div>
-                            <div class="card card-body">
-                                <form method="POST" action="/instructor/instructor-edit-quiz/{{id}}">   
-                                    <div class="form-group">
-                                        <label class="form-label">Question</label>
-                                        <div style="height: 150px;" class="mb-0" data-toggle="quill" data-quill-placeholder="Question" name="questionField">
-                                            An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?
-                                        </div>
-                                        <small class="form-text text-muted">Shortly describe the question.</small>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label">Question Type</label>
-                                        <select name="category" class="form-control custom-select">
-                                            <option value="vuejs">Multiple Answer</option>
-                                            {{! <option value="vuejs">Single Answer</option>
-                                            <option value="vuejs">Essay</option> }}
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="form-label" for="select01">Answers</label>
-                                        <input type="text" class="form-control" placeholder="Quiz Choice A" name="choiceA" required>
-                                        <input type="text" class="form-control" placeholder="Quiz Choice B" name="choiceB" required>
-                                        <input type="text" class="form-control" placeholder="Quiz Choice C" name="choiceC" required>
-                                        <input type="text" class="form-control" placeholder="Quiz Choice D" name="choiceD" required>
-                                        <label class="form-label" for="select01">Correct Answer</label>
-                                        <input type="text" class="form-control" placeholder="Correct Answer (A, B, C, D)" name="correctAnswer" required>
-                                    </div>
-                                </form>
-                                {{! <div class="form-group">
-                                    <label class="form-label" for="select01">Answers</label>
-                                    <select id="select01" data-toggle="select" data-tags="true" data-multiple="true" multiple="multiple" class="form-control">
-                                        <option selected="">My first option</option>
-                                        <option selected="">Another option</option>
-                                        <option>Third option is here</option>
-                                    </select>
-                                </div> }}
-                                {{! <div class="form-group">
-                                    <label class="form-label">Completion Points</label>
-                                    <input type="text" class="form-control" value="1000">
-                                </div> }}
-                                <div>
-                                    <a href="#" class="btn btn-outline-secondary">Add Question</a>
-                                </div>
-                            </div>
-
                         </div>
                         <div class="col-md-4">
                         <form method="POST" action="/instructor/instructor-edit-quiz">                            
@@ -226,21 +178,6 @@
                                 </div>
                             </div>
                         </form>
-                            <div class="page-separator">
-                                <div class="page-separator__text">Courses</div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">Add to course</label>
-                                        <select name="course" id="course" data-toggle="select" data-tags="true" data-multiple="true" multiple="multiple" data-minimum-results-for-search="-1" class="form-control" data-placeholder="Select course ...">
-                                            <option data-avatar-src="../../assets/images/paths/angular_40x40@2x.png" selected="">Angular Fundamentals</option>
-                                            <option data-avatar-src="../../assets/images/paths/swift_40x40@2x.png">Build an iOS Application in Swift</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>

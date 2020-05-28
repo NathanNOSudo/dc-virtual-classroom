@@ -88,7 +88,7 @@ router.post("/update-title-name/:id", async (req, res) => {
     let quizId = req.params.id
     let quizName = req.body.quizName
     const updatedQuizName = await models.Quiz.update({
-        question: quizName
+        quizName: quizName
     }, {
         where: {
             id: quizId

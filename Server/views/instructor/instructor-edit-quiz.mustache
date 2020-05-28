@@ -86,13 +86,8 @@
                             <div class="page-separator">
                                 <div class="page-separator__text">Quiz Name</div>
                             </div>
-<<<<<<< HEAD
                             <form method="POST" action="/instructor/update-title-name/{{id}}">   
                                 <input type="text" name="quizName" value="{{quizName}}" placeholder="Quiz Title">
-=======
-                            <form method="POST" action="/instructor/update-title-name">   
-                                <input type="text" name="quizName" placeholder="Quiz Title">
->>>>>>> sudent-quiz-completed
                                 <input type="hidden" name="quizId">
                                 <button type="submit">Save Title Name</button>
                             </form>
@@ -101,13 +96,24 @@
                             </div>
                             <ul class="list-group stack mb-40pt">
                                 <li class="list-group-item d-flex">
-<<<<<<< HEAD
                                     <div class="flex d-flex flex-column">
                                         <div class="card-title text-70 paragraph-max mb-16pt">{{question}}</div>
                                         <div class="page-separator">
                                             <div class="page-separator__text">Answer Choices</div>
                                         </div>
                                         <div class="form-check">
+                                            <span>A.) {{choice1}}</span>
+                                        </div>
+                                        <div class="form-check">
+                                            <span>B.) {{choice2}}</span>
+                                        </div>
+                                        <div class="form-check">
+                                            <span>C.) {{choice3}}</span>
+                                        </div>
+                                        <div class="form-check">
+                                            <span>D.) {{choice4}}</span>
+                                        </div>
+                                        <!-- <div class="form-check">
                                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
                                             <label class="form-check-label" for="exampleRadios1">
                                                 {{choice1}}
@@ -130,7 +136,7 @@
                                             <label class="form-check-label" for="exampleRadios2">
                                                 {{choice4}}
                                             </label>
-                                        </div>
+                                        </div> -->
                                         <div>
                                         <div class="page-separator" style="margin-top: 1rem;">
                                             <div class="page-separator__text">Correct Answer</div>
@@ -156,86 +162,21 @@
                                             </form>
                                         </div>
                                     </div>                       
-=======
-                                    <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                    <div class="flex d-flex flex-column">
-                                        <div class="card-title mb-4pt">Question 1 of 2</div>
-                                        <div class="card-subtitle text-70 paragraph-max mb-16pt">An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?</div>
-                                        <div>
-                                            <a href="" class="chip chip-light d-inline-flex align-items-center"><i class="material-icons icon-16pt icon--left">keyboard_arrow_down</i> Answers</a>
-                                            <div class="chip chip-outline-secondary">Single Answer</div>
-                                        </div>
-                                    </div>
-                                    <span class="text-muted mx-12pt">800 pt</span>
-                                    <div class="dropdown">
-                                        <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_horiz</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="javascript:void(0)" class="dropdown-item">Edit Question</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0)" class="dropdown-item text-danger">Delete Question</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item d-flex">
-                                    <i class="material-icons text-70 icon-16pt icon--left">drag_handle</i>
-                                    <div class="flex d-flex flex-column">
-                                        <div class="card-title mb-4pt">Question 2 of 2</div>
-                                        <div class="card-subtitle text-70 paragraph-max mb-8pt">What will be the output of below program?</div>
-                                        <code class="highlight js mb-16pt bg-transparent">function&nbsp;f(input:&nbsp;boolean)&nbsp;{<br />
-                                            &nbsp;&nbsp;let&nbsp;a&nbsp;=&nbsp;100;<br />
-                                            <br />
-                                            &nbsp;&nbsp;if&nbsp;(input)&nbsp;{<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;b&nbsp;=&nbsp;a&nbsp;+&nbsp;1;<br />
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;b;<br />
-                                            &nbsp;&nbsp;}<br />
-                                            &nbsp;&nbsp;return&nbsp;b;<br />
-                                            }</code>
-
-
-                                        <div class="d-flex">
-                                            <a href="" class="chip chip-light d-inline-flex align-items-center"><i class="material-icons icon-16pt icon--left">keyboard_arrow_down</i> Answers</a>
-                                            <div class="chip chip-outline-secondary">Single Answer</div>
-                                            <div class="chip chip-outline-secondary">Code</div>
-                                        </div>
-                                    </div>
-                                    <span class="text-muted mx-12pt">800 pt</span>
-
->>>>>>> sudent-quiz-completed
-                                    <div class="dropdown">
-                                        <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_horiz</i></a>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="javascript:void(0)" class="dropdown-item">Edit Question</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0)" class="dropdown-item text-danger">Delete Question</a>
-                                        </div>
-                                    </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> sudent-quiz-completed
                                 </li>
                             </ul>
 
-                            <div class="page-separator">
+                            <!-- <div class="page-separator">
                                 <div class="page-separator__text">New Question</div>
                             </div>
                             <div class="card card-body">
-<<<<<<< HEAD
                                 <form method="POST" action="/instructor/instructor-edit-quiz/{{id}}">   
                                     <div class="form-group">
                                         <label class="form-label">Question</label>
-=======
-                                <form method="POST" action="/instructor/instructor-edit-quiz">   
-                                    <div class="form-group">
-                                        <label class="form-label">Question</label>
-                                        <!-- <textarea class="form-control" rows="3" placeholder="Question"></textarea> -->
->>>>>>> sudent-quiz-completed
                                         <div style="height: 150px;" class="mb-0" data-toggle="quill" data-quill-placeholder="Question" name="questionField">
                                             An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?
                                         </div>
                                         <small class="form-text text-muted">Shortly describe the question.</small>
                                     </div>
-<<<<<<< HEAD
                                     <div class="form-group">
                                         <label class="form-label">Question Type</label>
                                         <select name="category" class="form-control custom-select">
@@ -253,16 +194,6 @@
                                         <label class="form-label" for="select01">Correct Answer</label>
                                         <input type="text" class="form-control" placeholder="Correct Answer (A, B, C, D)" name="correctAnswer" required>
                                     </div>
-=======
-                                        <div class="form-group">
-                                            <label class="form-label">Question Type</label>
-                                            <select name="category" class="form-control custom-select">
-                                                <option value="vuejs">Multiple Answer</option>
-                                                {{! <option value="vuejs">Single Answer</option>
-                                                <option value="vuejs">Essay</option> }}
-                                            </select>
-                                        </div>
->>>>>>> sudent-quiz-completed
                                 </form>
                                 {{! <div class="form-group">
                                     <label class="form-label" for="select01">Answers</label>
@@ -279,46 +210,9 @@
                                 <div>
                                     <a href="#" class="btn btn-outline-secondary">Add Question</a>
                                 </div>
-                            </div>
+                            </div> -->
 
                         </div>
-                        <div class="col-md-4">
-                        <form method="POST" action="/instructor/instructor-edit-quiz">                            
-                            <div class="card">
-                                <div class="card-header text-center">
-                                    <a href="#" class="btn btn-accent">Save changes</a>
-                                </div>
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex">
-                                        <a class="flex" href="#"><strong>Save Draft</strong></a>
-                                        <i class="material-icons text-muted">check</i>
-                                    </div>
-                                    {{! <div class="list-group-item">
-                                        <a href="#" class="text-danger"><strong>Delete Quiz</strong></a>
-                                    </div> }}
-                                </div>
-                            </div>
-                        </form>
-                            <div class="page-separator">
-                                <div class="page-separator__text">Courses</div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="form-group mb-0">
-                                        <label class="form-label">Add to course</label>
-                                        <select name="course" id="course" data-toggle="select" data-tags="true" data-multiple="true" multiple="multiple" data-minimum-results-for-search="-1" class="form-control" data-placeholder="Select course ...">
-<<<<<<< HEAD
-                                            <option data-avatar-src="../../assets/images/paths/angular_40x40@2x.png" selected="">Angular Fundamentals</option>
-                                            <option data-avatar-src="../../assets/images/paths/swift_40x40@2x.png">Build an iOS Application in Swift</option>
-=======
-                                            <option data-avatar-src="../assets/images/paths/angular_40x40@2x.png" selected="">Angular Fundamentals</option>
-                                            <option data-avatar-src="../assets/images/paths/swift_40x40@2x.png">Build an iOS Application in Swift</option>
->>>>>>> sudent-quiz-completed
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -343,7 +237,6 @@
 
 
     <!-- jQuery -->
-<<<<<<< HEAD
     <script src="../../assets/vendor/jquery.min.js"></script>
 
     <!-- Bootstrap -->
@@ -375,39 +268,6 @@
 
     <!-- Highlight.js -->
     <script src="../../assets/js/hljs.js"></script>
-=======
-    <script src="../assets/vendor/jquery.min.js"></script>
-
-    <!-- Bootstrap -->
-    <script src="../assets/vendor/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap.min.js"></script>
-
-    <!-- Perfect Scrollbar -->
-    <script src="../assets/vendor/perfect-scrollbar.min.js"></script>
-
-    <!-- DOM Factory -->
-    <script src="../assets/vendor/dom-factory.js"></script>
-
-    <!-- MDK -->
-    <script src="../assets/vendor/material-design-kit.js"></script>
-
-    <!-- Fix Footer -->
-    <script src="../assets/vendor/fix-footer.js"></script>
-
-    <!-- App JS -->
-    <script src="../assets/js/app.js"></script>
-
-
-    <!-- Quill -->
-    <script src="../assets/vendor/quill.min.js"></script>
-    <script src="../assets/js/quill.js"></script>
-    <!-- Select2 -->
-    <script src="../assets/vendor/select2/select2.min.js"></script>
-    <script src="../assets/js/select2.js"></script>
-
-    <!-- Highlight.js -->
-    <script src="../assets/js/hljs.js"></script>
->>>>>>> sudent-quiz-completed
 
 </body>
 
