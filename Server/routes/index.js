@@ -19,9 +19,12 @@ router.get("/register", (req, res) => {
 })
 
 router.post("/register", async (req, res) => {
-    let fullName = req.body.fullName
+    let firstName = req.body.firstname
+    let lastName = req.body.lastname
     let email = req.body.email
     let password = req.body.password
+    let fullName = firstName + lastName
+    console.log(fullName)
 
     let persistedUser = await models.User.findOne({
         where: {
