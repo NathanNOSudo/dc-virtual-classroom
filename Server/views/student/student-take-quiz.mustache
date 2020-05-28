@@ -2,8 +2,36 @@
 <html lang="en" dir="ltr">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Quiz</title>
-    {{> header}}
+
+    <!-- Prevent the demo from appearing in search engines -->
+    <meta name="robots" content="noindex">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Fix Footer CSS -->
+    <link type="text/css" href="../../assets/vendor/fix-footer.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../assets/css/material-icons.css" rel="stylesheet">
+
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../assets/css/fontawesome.css" rel="stylesheet">
+
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../assets/css/preloader.css" rel="stylesheet">
+
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../assets/css/app.css" rel="stylesheet">
 </head>
 
 <body class="layout-sticky-subnav layout-default ">
@@ -14,11 +42,7 @@
     <div class="mdk-header-layout js-mdk-header-layout">
 
         <!-- Header -->
-<<<<<<< HEAD
-        {{> headerNav}}
-=======
         {{> headernav-v2}}
->>>>>>> sudent-quiz-completed
         <!-- // END Header -->
 
         <!-- Header Layout Content -->
@@ -32,7 +56,7 @@
                         <div class="nav-item navbar-list__item">
                             <div class="d-flex align-items-center flex-nowrap">
                                 <div class="mr-16pt">
-                                    <a href="fixed-student-take-course.html"><img src="assets/images/paths/angular_64x64.png" width="40" alt="Angular" class="rounded"></a>
+                                    <a href="fixed-student-take-course.html"><img src="../../assets/images/paths/angular_64x64.png" width="40" alt="Angular" class="rounded"></a>
                                 </div>
                                 <div class="flex">
                                     <a href="fixed-student-take-course.html" class="card-title text-body mb-0">Angular Fundamentals</a>
@@ -57,11 +81,11 @@
                     </nav>
 
                     <div class="d-flex flex-wrap align-items-end justify-content-end mb-16pt">
-                        <h1 class="text-white flex m-0">Question 1 of 5</h1>
+                        <h1 class="text-white flex m-0">Question 1 of 1</h1>
                         <p class="h1 text-white-50 font-weight-light m-0">00:14</p>
                     </div>
 
-                    <p class="hero__lead measure-hero-lead text-white-50">An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?</p>
+                    <p class="hero__lead measure-hero-lead text-white-50">{{question}}</p>
                 </div>
             </div>
 
@@ -84,31 +108,26 @@
             </div>
 
             <div class="container page__container">
-                <div class="page-section">
-                    <div class="page-separator">
-                        <div class="page-separator__text">Your Answer</div>
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input id="customCheck01" type="checkbox" class="custom-control-input">
-                            <label for="customCheck01" class="custom-control-label">Ability to use newer syntax and offers reliability</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input id="customCheck02" type="checkbox" class="custom-control-input" checked="">
-                            <label for="customCheck02" class="custom-control-label">Compatibility</label>
-                        </div>
-                    </div>
-                    <div class="form-group mb-32pt mb-lg-48pt">
-                        <div class="custom-control custom-checkbox">
-                            <input id="customCheck03" type="checkbox" class="custom-control-input">
-                            <label for="customCheck03" class="custom-control-label">Usage of missing features</label>
-                        </div>
-                    </div>
-
-                    <p class="text-50 mb-0">Note: There can be multiple correct answers to this question.</p>
-                </div>
+                <form method="POST" action="/student/student-take-quiz/{{id}}">
+                <fieldset>
+                    <p>Newsletter format</p>
+                    <ul class="flex">
+                        <li>
+                            <input type="radio" id="html_format" name="format" value="html_format" checked>
+                            <label for="html_format">{{choice1}}</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
+                            <label for="plain_text">{{choice2}}</label>
+                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
+                            <label for="plain_text">{{choice3}}</label>
+                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
+                            <label for="plain_text">{{choice4}}</label>
+                        </li>
+                    </ul>
+                    <button>Submit Quiz</button>
+                </fieldset>
+                </form>
             </div>
 
 
@@ -133,26 +152,26 @@
 
 
     <!-- jQuery -->
-    <script src="assets/vendor/jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="assets/vendor/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap.min.js"></script>
+    <script src="../../assets/vendor/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap.min.js"></script>
 
     <!-- Perfect Scrollbar -->
-    <script src="assets/vendor/perfect-scrollbar.min.js"></script>
+    <script src="../../assets/vendor/perfect-scrollbar.min.js"></script>
 
     <!-- DOM Factory -->
-    <script src="assets/vendor/dom-factory.js"></script>
+    <script src="../../assets/vendor/dom-factory.js"></script>
 
     <!-- MDK -->
-    <script src="assets/vendor/material-design-kit.js"></script>
+    <script src="../../assets/vendor/material-design-kit.js"></script>
 
     <!-- Fix Footer -->
-    <script src="assets/vendor/fix-footer.js"></script>
+    <script src="../../assets/vendor/fix-footer.js"></script>
 
     <!-- App JS -->
-    <script src="assets/js/app.js"></script>
+    <script src="../../assets/js/app.js"></script>
 
 
 

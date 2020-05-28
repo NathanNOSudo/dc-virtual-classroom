@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Quiz.associate = function(models) {
     Quiz.hasMany(models.completedquizes, {foreignKey: "quizId"})
-    Quiz.belongsTo(models.user, {foreignKey: "assignedTo"})
+    Quiz.belongsTo(models.User, {foreignKey: "assignedTo"})
     // associations can be defined here
     // This is how to link to other tables
   };
