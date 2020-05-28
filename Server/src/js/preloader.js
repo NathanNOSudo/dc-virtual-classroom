@@ -1,1 +1,0 @@
-import 'ui-huma/js/preloader'
