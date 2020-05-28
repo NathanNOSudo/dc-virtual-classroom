@@ -5,13 +5,14 @@ const models = require("../models")
 
 const SALT_ROUNDS = 10
 
+// implementing partials for each folder? Have to set mustachexpress engine route to include this folder's partials
+
 
 
 router.get("/instructor-dash", async (req, res) => {
     const quiz = await models.Quiz.findAll()
     const quizValues = quiz.map((ele) => ele.dataValues)
     console.log(quizValues)
-
     res.render("instructor/instructor-dash", { quizzes: quizValues })
 })
 router.get("/instructor-courses", (req, res) => {
@@ -31,13 +32,13 @@ router.get("/instructor-courses", (req, res) => {
 //     res.render(`instructor/instructor-quizzes/${quizId}`)
 // })
 
-// router.get("/instructor-quizzes", async (req, res) => {
-//     const quiz = await models.Quiz.findAll()
-//     const quizValues = quiz.map((ele) => ele.dataValues)
-//     console.log(quizValues)
+router.get("/instructor-quizzes", async (req, res) => {
+    const quiz = await models.Quiz.findAll()
+    const quizValues = quiz.map((ele) => ele.dataValues)
+    console.log(quizValues)
 
-//     res.render("instructor/instructor-quizzes", { quizzes: quizValues })
-// })
+    res.render("instructor/instructor-quizzes", { quizzes: quizValues })
+})
 
 router.get("/instructor-quizzes/:id", async (req, res) => {
     const quizId = req.params.id
@@ -88,7 +89,7 @@ router.post("/update-title-name/:id", async (req, res) => {
     let quizId = req.params.id
     let quizName = req.body.quizName
     const updatedQuizName = await models.Quiz.update({
-        quizName: quizName
+        question: quizName
     }, {
         where: {
             id: quizId

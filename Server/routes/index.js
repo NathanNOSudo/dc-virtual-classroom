@@ -24,7 +24,6 @@ router.post("/register", async (req, res) => {
     let email = req.body.email
     let password = req.body.password
     let fullName = firstName + lastName
-    console.log(fullName)
 
     let persistedUser = await models.User.findOne({
         where: {
@@ -36,9 +35,9 @@ router.post("/register", async (req, res) => {
 
         bcrypt.hash(password, SALT_ROUNDS, async (error, hash) => {
             if (error) {
-                res.render("/register", { mesage: "Error creating users!" })
+                res.render("register", { mesage: "Error creating users!" })
             } else {
-                let user = models.User.build({
+                let user = await models.User.build({
                     username: email,
                     password: hash,
                     fullName: fullName
@@ -47,7 +46,7 @@ router.post("/register", async (req, res) => {
                 if (savedUser != null) {
                     res.redirect("/login")
                 } else {
-                    res.render("/register", { message: "User already exists!" })
+                    res.render("register", { message: "User already exists!" })
                 }
             }
         })
@@ -72,8 +71,16 @@ router.post("/login", async (req, res) => {
                 // create a session
                 if (req.session) {
                     req.session.user = { userId: user.id }
+                    req.session.userType = user.userType
                     // need to set a proper page
-                    res.redirect('/')
+                    console.log(user.userType)
+                    if (user.userType == "admin") {
+                        res.redirect("/instructor/instructor-dash")
+                    } else if (user.userType == "student") {
+                        res.redirect("/student/student-dashboard")
+                    } else {
+                        res.redirect('/')
+                    }
                 }
 
             } else {

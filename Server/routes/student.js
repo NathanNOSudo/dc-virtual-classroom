@@ -9,7 +9,6 @@ const SALT_ROUNDS = 10
 router.get("/student-dashboard/", async (req, res) => {
     const currentStudentSession = req.session.user
     const currentStudentId = currentStudentSession.userId 
-    console.log(currentStudentId)
     const studentQuizzes = await models.Quiz.findAll({
         where: {
             assignedTo: currentStudentId
@@ -17,8 +16,6 @@ router.get("/student-dashboard/", async (req, res) => {
     })
 
     const quizValues = studentQuizzes.map((ele) => ele.dataValues)
-    console.log(quizValues)
-
     res.render("student/student-dashboard", { quizzes: quizValues })
 })
 

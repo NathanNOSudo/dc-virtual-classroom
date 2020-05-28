@@ -126,60 +126,59 @@
 
         <!-- Header Layout Content -->
         <div class="mdk-header-layout__content page-content ">
-            <div class="page-headline page-headline--blue page-headline--title text-center">
+            <div class="page-headline page-headline--blue page-headline--title text-center" style="padding-top: 2rem;">
                 <h2 class="text-blue">Register For an Account</h2>
             </div>
             <div class="page-section container page__container" style="justify-content: center;">
-                <div class="col-lg-10 p-0 mx-auto">
-                    <div class="row" style="justify-content: center;">
-                        <div class="col-lg-8 d-flex align-items-center">
-                            <form action="/register" method="POST">
-                                <div class="flex" style="max-width: 100%">
-                                    <div class="was-validated">
-                                        <div class="form-row">
-                                            <div class="col-12 col-md-6 mb-3">
-                                                <label class="form-label" for="validationSample01">First name</label>
-                                                <input type="text" class="form-control" id="validationSample01" placeholder="First name" value="Mark" name="firstName" required="">
-                                                <div class="invalid-feedback">Please provide a first name.</div>
-                                                <div class="valid-feedback">Looks good!</div>
-                                            </div>
-                                            <div class="col-12 col-md-6 mb-3">
-                                                <label class="form-label" for="validationSample02">Last name</label>
-                                                <input type="text" class="form-control" id="validationSample02" placeholder="Last name" name="lastName" value="Otto" required="">
-                                                <div class="invalid-feedback">Please provide a last name.</div>
-                                                <div class="valid-feedback">Looks good!</div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-12 col-md-6 mb-3">
-                                                <label class="form-label" for="validationSample03">Email Address</label>
-                                                <input type="email" class="form-control" id="validationSample03" placeholder="Email" name="email" required="">
-                                                <div class="invalid-feedback">Please provide a valid Email Address</div>
-                                                <div class="valid-feedback">Looks good!</div>
-                                            </div>
-                                            <div class="col-12 col-md-6 mb-3">
-                                                <label class="form-label" for="validationSample04">Password</label>
-                                                <input type="password" class="form-control" id="validationSample04" name="password" placeholder="Password" required="">
-                                                <div class="invalid-feedback">Please provide a valid password</div>
-                                                <div class="valid-feedback">Looks good!</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" type="checkbox" value="" id="invalidCheck01" required="" checked="">
-                                            <label class="custom-control-label" for="invalidCheck01">
-                                                Agree to terms and conditions
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Submit</button>
-
+                <form action="/register" method="POST">
+                    <div class="flex" style="max-width: 100%">
+                        <div class="was-validated">
+                            <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label class="form-label" for="validationSample01">First name</label>
+                                    <input type="text" class="form-control" id="validationSample01" placeholder="First name" value="Mark" name="firstName" required="">
+                                    <div class="invalid-feedback">Please provide a first name.</div>
+                                    <div class="valid-feedback">Looks good!</div>
                                 </div>
-                            </form>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label class="form-label" for="validationSample02">Last name</label>
+                                    <input type="text" class="form-control" id="validationSample02" placeholder="Last name" name="lastName" value="Otto" required="">
+                                    <div class="invalid-feedback">Please provide a last name.</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label class="form-label" for="validationSample03">Email Address</label>
+                                    <input type="email" class="form-control" id="validationSample03" placeholder="Email" name="email" required="">
+                                    <div class="invalid-feedback">Please provide a valid Email Address</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label class="form-label" for="validationSample04">Password</label>
+                                    <input type="password" class="form-control" id="validationSample04" name="password" placeholder="Password" required="">
+                                    <div class="invalid-feedback">Please provide a valid password</div>
+                                    <div class="valid-feedback">Looks good!</div>
+                                </div>
+                            </div>
                         </div>
+                        {{#message}}
+                        <div class="alert alert-danger" role="alert">
+                            {{message}}
+                        </div>
+                        {{/message}}
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" value="" id="invalidCheck01" required="" checked="">
+                                <label class="custom-control-label" for="invalidCheck01">
+                                    Agree to terms and conditions
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+
                     </div>
-                </div>
+                </form>
             </div>
         </div>
         <!-- // END Header Layout Content -->

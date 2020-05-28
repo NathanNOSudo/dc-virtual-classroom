@@ -31,13 +31,28 @@ app.use((req, res, next) => {
 
 app.use('/assets', express.static('assets'))
 
+function checkIfAdmin(req, res, next) {
+    if (req.session.userType == "admin") {
+        next()
+    } else {
+        res.redirect("/")
+    }
+}
+
+function checkIfStudent(req, res, next) {
+    if (req.session.userType == "student") {
+        next()
+    } else {
+        res.redirect("/")
+    }
+}
+
 // BUG: 
 // need to check authorization on main page to maintain proper navbar but it's not working
 // tried adding checkAuth function but it results in a loop
 app.use("/", indexRoutes)
-app.use("/student", checkAuthorization, studentRoutes)
-app.use("/instructor", checkAuthorization, instructorRoutes)
-
+app.use("/student", checkAuthorization, checkIfStudent, studentRoutes)
+app.use("/instructor", checkAuthorization, checkIfAdmin, instructorRoutes)
 
 
 app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
