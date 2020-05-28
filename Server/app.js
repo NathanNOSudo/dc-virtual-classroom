@@ -35,8 +35,8 @@ app.use('/assets', express.static('assets'))
 // need to check authorization on main page to maintain proper navbar but it's not working
 // tried adding checkAuth function but it results in a loop
 app.use("/", indexRoutes)
-app.use("/student", studentRoutes)
-app.use("/instructor", instructorRoutes)
+app.use("/student", checkAuthorization, studentRoutes)
+app.use("/instructor", checkAuthorization, instructorRoutes)
 
 
 

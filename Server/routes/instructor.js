@@ -7,8 +7,12 @@ const SALT_ROUNDS = 10
 
 
 
-router.get("/instructor-dash", (req, res) => {
-    res.render("instructor/instructor-dash")
+router.get("/instructor-dash", async (req, res) => {
+    const quiz = await models.Quiz.findAll()
+    const quizValues = quiz.map((ele) => ele.dataValues)
+    console.log(quizValues)
+
+    res.render("instructor/instructor-dash", { quizzes: quizValues })
 })
 router.get("/instructor-courses", (req, res) => {
     res.render("instructor/instructor-courses")
@@ -27,13 +31,13 @@ router.get("/instructor-courses", (req, res) => {
 //     res.render(`instructor/instructor-quizzes/${quizId}`)
 // })
 
-router.get("/instructor-quizzes", async (req, res) => {
-    const quiz = await models.Quiz.findAll()
-    const quizValues = quiz.map((ele) => ele.dataValues)
-    console.log(quizValues)
+// router.get("/instructor-quizzes", async (req, res) => {
+//     const quiz = await models.Quiz.findAll()
+//     const quizValues = quiz.map((ele) => ele.dataValues)
+//     console.log(quizValues)
 
-    res.render("instructor/instructor-quizzes", { quizzes: quizValues })
-})
+//     res.render("instructor/instructor-quizzes", { quizzes: quizValues })
+// })
 
 router.get("/instructor-quizzes/:id", async (req, res) => {
     const quizId = req.params.id
