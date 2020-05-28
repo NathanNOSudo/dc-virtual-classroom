@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   completedquizes.associate = function(models) {
     // associations can be defined here
-    completedquizes.belongsTo(models.user, {foreignKey: "studentId"})
-    completedquizes.belongsTo(models.quiz, {foreignKey: "quizId"})
+    completedquizes.belongsTo(models.User, {foreignKey: "studentId"})
+    completedquizes.belongsTo(models.Quiz, {foreignKey: "quizId"})
   };
   return completedquizes;}

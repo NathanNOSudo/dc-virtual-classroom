@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     // associations can be defined here
     User.hasMany(models.completedquizes, {foreignKey: "studentId"})
-    User.hasMany(models.quiz, {foreignKey: "assignedTo"})
+    User.hasMany(models.Quiz, {foreignKey: "assignedTo"})
   };
   return User;
 };
