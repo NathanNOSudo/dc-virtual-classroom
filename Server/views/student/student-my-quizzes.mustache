@@ -4,7 +4,6 @@
 <head>
     {{> header}}
     <title>Quizzes</title>
-
 </head>
 <body class="layout-sticky-subnav layout-default ">
 
@@ -14,7 +13,9 @@
     <div class="mdk-header-layout js-mdk-header-layout">
 
         <!-- Header -->
-        {{> headerNav}}
+
+        {{> headernav-v2}}
+
         <!-- // END Header -->
 
         <!-- Header Layout Content -->
@@ -49,6 +50,19 @@
 
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div class="container page__container page-section">
 
 
@@ -272,6 +286,31 @@
                         </li>
                     </ul>
 
+
+                    <!-- <ul class="pagination justify-content-center pagination-sm">
+                <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true" class="material-icons">chevron_left</span>
+                <span>Prev</span>
+                </a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#" aria-label="1">
+                <span>1</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="1">
+                <span>2</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                <span>Next</span>
+                <span aria-hidden="true" class="material-icons">chevron_right</span>
+                </a>
+            </li>
+            </ul> -->
                 </div>
 
 
@@ -414,49 +453,47 @@
                         </a>
                     </li>
                     <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span>Next</span>
-                                <span aria-hidden="true" class="material-icons">chevron_right</span>
-                            </a>
-                        </li>
-                    </ul>
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span>Next</span>
+                            <span aria-hidden="true" class="material-icons">chevron_right</span>
+                        </a>
+                    </li>
+                </ul>
 
 
-                                <!-- <ul class="pagination justify-content-center pagination-sm">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true" class="material-icons">chevron_left</span>
-                    <span>Prev</span>
-                    </a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#" aria-label="1">
-                    <span>1</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="1">
-                    <span>2</span>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                    <span>Next</span>
-                    <span aria-hidden="true" class="material-icons">chevron_right</span>
-                    </a>
-                </li>
-                </ul> -->
+                <!-- <ul class="pagination justify-content-center pagination-sm">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true" class="material-icons">chevron_left</span>
+                <span>Prev</span>
+                </a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#" aria-label="1">
+                <span>1</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="1">
+                <span>2</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                <span>Next</span>
+                <span aria-hidden="true" class="material-icons">chevron_right</span>
+                </a>
+            </li>
+            </ul> -->
             </div>
 
 
 
 
         </div>
+
         <!-- // END Header Layout Content -->
-
-
         {{> footer}}
-
 
     </div>
     <!-- // END Header Layout -->
@@ -490,10 +527,6 @@
 
     <!-- App JS -->
     <script src="assets/js/app.js"></script>
-
-
-
-
 </body>
 
 </html>

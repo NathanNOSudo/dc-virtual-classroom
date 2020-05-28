@@ -11,6 +11,8 @@ const instructorRoutes = require("./routes/instructor")
 const studentRoutes = require("./routes/student")
 const checkAuthorization = require("./middleware/authorization")
 
+console.log("test")
+
 app.use(session({
     secret: 'pineapple_octo',
     resave: true,
