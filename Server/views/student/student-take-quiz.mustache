@@ -3,7 +3,35 @@
 
 <head>
     <title>Quiz</title>
-    {{> header}}
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CRoboto:400,500%7CExo+2:600&display=swap" rel="stylesheet">
+
+    <!-- Perfect Scrollbar -->
+    <link type="text/css" href="../../assets/vendor/perfect-scrollbar.css" rel="stylesheet">
+
+    <!-- Fix Footer CSS -->
+    <link type="text/css" href="../../assets/vendor/fix-footer.css" rel="stylesheet">
+
+    <!-- Material Design Icons -->
+    <link type="text/css" href="../../assets/css/material-icons.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link type="text/css" href="../../assets/css/fontawesome.css" rel="stylesheet">
+
+    <!-- Preloader -->
+    <link type="text/css" href="../../assets/css/preloader.css" rel="stylesheet">
+
+    <!-- App CSS -->
+    <link type="text/css" href="../../assets/css/app.css" rel="stylesheet">
+
+    <!-- Quill Theme -->
+    <link type="text/css" href="../../assets/css/quill.css" rel="stylesheet">
+
+    <!-- Select2 -->
+    <link type="text/css" href="../../assets/css/select2.css" rel="stylesheet">
+    <link type="text/css" href="../../assets/vendor/select2/select2.min.css" rel="stylesheet">
+
 </head>
 
 <body class="layout-sticky-subnav layout-default ">
@@ -81,99 +109,86 @@
 
             <div class="container page__container">
                 <form method="POST" action="/student/student-take-quiz/{{id}}">
-                <fieldset>
-                    <p>Newsletter format</p>
-                    <ul class="flex">
-                        <li>
-                            <input type="radio" id="html_format" name="format" value="html_format" checked>
-                            <label for="html_format">{{choice1}}</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
-                            <label for="plain_text">{{choice2}}</label>
-                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
-                            <label for="plain_text">{{choice3}}</label>
-                            <input type="radio" id="plain_text" name="format" value="plain_text_format">
-                            <label for="plain_text">{{choice4}}</label>
-                        </li>
-                    </ul>
+                    <div class="form-group">    
+                        <div class="custom-controls-stacked">
+                            <div class="custom-control custom-radio">
+                                <input id="radioStacked1" name="choice" type="radio" class="custom-control-input" value="{{choice1}}">
+                                <label for="radioStacked1" class="custom-control-label">{{choice1}}</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="radioStacked2" name="choice" type="radio" class="custom-control-input" value="{{choice2}}">
+                                <label for="radioStacked2" class="custom-control-label">{{choice2}}</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="radioStacked3" name="choice" type="radio" class="custom-control-input" value="{{choice3}}">
+                                <label for="radioStacked3" class="custom-control-label">{{choice3}}</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="radioStacked4" name="choice" type="radio" class="custom-control-input" value="{{choice4}}">
+                                <label for="radioStacked4" class="custom-control-label">{{choice4}}</label>
+                            </div>
+                        </div>
+                    </div>                    
                     <button>Submit Quiz</button>
-                </fieldset>
                 </form>
             </div>
-
-
-
-
         </div>
         <!-- // END Header Layout Content -->
-
-
         {{> footer}}
-
-
     </div>
     <!-- // END Header Layout -->
-
-
-
 
     <!-- drawer -->
     {{> drawer}}
     <!-- // END drawer -->
 
-
     <!-- jQuery -->
-    <script src="../assets/vendor/jquery.min.js"></script>
+    <script src="../../assets/vendor/jquery.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="../assets/vendor/popper.min.js"></script>
-    <script src="../assets/vendor/bootstrap.min.js"></script>
+    <script src="../../assets/vendor/popper.min.js"></script>
+    <script src="../../assets/vendor/bootstrap.min.js"></script>
 
     <!-- Perfect Scrollbar -->
-    <script src="../assets/vendor/perfect-scrollbar.min.js"></script>
+    <script src="../../assets/vendor/perfect-scrollbar.min.js"></script>
 
     <!-- DOM Factory -->
-    <script src="../assets/vendor/dom-factory.js"></script>
+    <script src="../../assets/vendor/dom-factory.js"></script>
 
     <!-- MDK -->
-    <script src="../assets/vendor/material-design-kit.js"></script>
+    <script src="../../assets/vendor/material-design-kit.js"></script>
 
     <!-- Fix Footer -->
-    <script src="../assets/vendor/fix-footer.js"></script>
+    <script src="../../assets/vendor/fix-footer.js"></script>
 
     <!-- App JS -->
-    <script src="../assets/js/app.js"></script>
-
+    <script src="../../assets/js/app.js"></script>
 
     <!-- Global Settings -->
-    <script src="../assets/js/settings.js"></script>
+    <script src="../../assets/js/settings.js"></script>
 
     <!-- Flatpickr -->
-    <script src="../assets/vendor/flatpickr/flatpickr.min.js"></script>
-    <script src="../assets/js/flatpickr.js"></script>
+    <script src="../../assets/vendor/flatpickr/flatpickr.min.js"></script>
+    <script src="../../assets/js/flatpickr.js"></script>
 
     <!-- Moment.js -->
-    <script src="../assets/vendor/moment.min.js"></script>
-    <script src="../assets/vendor/moment-range.min.js"></script>
+    <script src="../../assets/vendor/moment.min.js"></script>
+    <script src="../../assets/vendor/moment-range.min.js"></script>
 
     <!-- Chart.js -->
-    <script src="../assets/vendor/Chart.min.js"></script>
-    <script src="../assets/js/chartjs.js"></script>
+    <script src="../../assets/vendor/Chart.min.js"></script>
+    <script src="../../assets/js/chartjs.js"></script>
 
     <!-- Chart.js Samples -->
-    <script src="../assets/js/page.student-dashboard.js"></script>
+    <script src="../../assets/js/page.student-dashboard.js"></script>
 
     <!-- List.js -->
-    <script src="../assets/vendor/list.min.js"></script>
-    <script src="../assets/js/list.js"></script>
+    <script src="../../assets/vendor/list.min.js"></script>
+    <script src="../../assets/js/list.js"></script>
 
     <!-- Tables -->
-    <script src="../assets/js/toggle-check-all.js"></script>
-    <script src="../assets/js/check-selected-row.js"></script>
-
-
-
+    <script src="../../assets/js/toggle-check-all.js"></script>
+    <script src="../../assets/js/check-selected-row.js"></script>
 
 </body>
 

@@ -59,7 +59,7 @@ router.get("/instructor-edit-course", (req, res) => {
 
 // EDIT quiz functionality
 router.get("/instructor-edit-quiz/:id", async (req, res) => {
-    let quizId = req.params.id
+    const quizId = req.params.id
     const quiz = await models.Quiz.findOne({
         where: {
             id: quizId
@@ -86,8 +86,8 @@ router.post("/update-quiz-answer/:id", async (req, res) => {
 })
 
 router.post("/update-title-name/:id", async (req, res) => {
-    let quizId = req.params.id
-    let quizName = req.body.quizName
+    const quizId = req.params.id
+    const quizName = req.body.quizName
     const updatedQuizName = await models.Quiz.update({
         question: quizName
     }, {
@@ -101,7 +101,7 @@ router.post("/update-title-name/:id", async (req, res) => {
 
 // Create Quiz
 router.get("/instructor-create-quiz", async (req, res) => {
-    // let users = []
+    // const users = []
     
     // models.User.findAll()
     //     .then((results) => {
@@ -111,9 +111,9 @@ router.get("/instructor-create-quiz", async (req, res) => {
     // })
     // console.log(myUsers)
 
-    let myUsers = await models.User.findAll()
+    const myUsers = await models.User.findAll()
 
-    let userIds = myUsers.map((ele) => ele.dataValues.username)
+    const userIds = myUsers.map((ele) => ele.dataValues.username)
     
     console.log(userIds)
     // console.log(myUsers.dataValues.username)
@@ -144,9 +144,9 @@ router.post("/instructor-create-quiz", async (req, res) => {
         }
     })
 
-    let userId = userObject.dataValues.id
+    const userId = userObject.dataValues.id
 
-    let quiz = models.Quiz.build({
+    const quiz = models.Quiz.build({
         choice1: choiceA,
         choice2: choiceB,
         choice3: choiceC,
@@ -158,7 +158,7 @@ router.post("/instructor-create-quiz", async (req, res) => {
         assignedTo: userId
     })
 
-    let persistedQuiz = await quiz.save()
+    const persistedQuiz = await quiz.save()
 
     if (persistedQuiz != null) {
         res.redirect('/instructor/instructor-quizzes')

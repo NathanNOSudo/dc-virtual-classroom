@@ -42,7 +42,6 @@ router.get("/student-quiz-result", (req, res) => {
 
 router.get("/student-take-quiz/:id", async (req, res) => {
     const quizId = req.params.id
-    const studentId = req.session.user
     const currentStudentSession = req.session.user
     const currentStudentId = currentStudentSession.userId 
     // quiz database assignedto studentId 
@@ -61,6 +60,29 @@ router.get("/student-take-quiz/:id", async (req, res) => {
 })
 
 router.post("/student-take-quiz/:id", async (req, res) => {
+    const quizId = req.params.id
+    const currentStudentSession = req.session.user
+    const currentStudentId = currentStudentSession.userId 
+    const studentAnswer = req.body.choice
+
+    console.log(studentAnswer + "@@@@@@@@@@@@@@@@")
+
+    // need quizId
+    // Need userID
+    // need student answer
+
+    const quiz = await models.Quiz.findOne({
+        where: {
+            id: quizId
+        }
+    })
+
+    const quizValues = quiz.dataValues
+    if (quizValues.correctAnswer == studentAnswer) {
+        
+    }
+    // console.log(quiz)
+
 
 })
 
