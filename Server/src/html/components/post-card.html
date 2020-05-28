@@ -1,0 +1,51 @@
+{% macro component(prefix, link='blog-post.html', wrap=false, item={
+  avatar: "assets/images/paths/sketch_200x168.png",
+  title: "Merge Duplicates Inconsistent Symbols & Styles",
+  views: 78,
+  tag: "Sketch",
+  date: "09 Nov, 2018 07:13 PM",
+  avatarGroup: true,
+  avatarCount: 1,
+  avatars: [
+    "assets/images/256_rsz_1andy-lee-642320-unsplash.jpg",
+    "assets/images/256_michael-dam-258165-unsplash.jpg",
+    "assets/images/256_luke-porter-261779-unsplash.jpg"
+  ]
+}) %}
+<div class="card posts-card{% if wrap !== false %} posts-card--wrap-{{ wrap }}{% endif %}">
+  <div class="posts-card__content d-flex align-items-center flex-wrap">
+    <div class="avatar avatar-lg overlay overlay--primary rounded o-hidden mr-3">
+      <a href="{{ prefix }}{{ link }}"><img src="{{ item.avatar }}" alt="avatar" class="avatar-img rounded"></a>
+      <div class="overlay__content"></div>
+    </div>
+    <div class="posts-card__title flex d-flex flex-column">
+      <a href="{{ prefix }}{{ link }}" class="card-title mr-3">{{ item.title }}</a>
+      <small class="text-50">{{ item.views }} views last week</small>
+    </div>
+    <div class="d-flex align-items-center flex-column flex-sm-row posts-card__meta">
+      <div class="mr-3 text-50 text-uppercase posts-card__tag d-flex align-items-center">
+        <i class="material-icons text-muted-light mr-1">folder_open</i> {{ item.tag }}
+      </div>
+      <div class="mr-3 text-50 posts-card__date">
+        <small>{{ item.date }}</small>
+      </div>
+      <div class="media ml-sm-auto align-items-center">
+        <div class="media-left mr-2{% if item.avatarGroup %} avatar-group{% endif %}">
+          {% for avatar in item.avatars %}
+          <div class="avatar avatar-xs" data-toggle="tooltip" data-placement="top" title="Janell D.">
+            <img src="{{ avatar }}" alt="Avatar" class="avatar-img rounded-circle">
+          </div>
+          {% endfor %}
+        </div>
+        <div class="media-body">
+          {% if item.avatarCount > 1 %}
+          <a href="">+{{ item.avatarCount-1 }} more</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{{ component(prefix=prefix) }}

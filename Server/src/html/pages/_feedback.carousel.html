@@ -1,0 +1,23 @@
+{% import 'components/card-feedback.html' as card %}
+
+<div class="position-relative carousel-card col-lg-8 p-0 mx-auto">
+  <div class="row d-block js-mdk-carousel" id="carousel-feedback">
+    <a 
+      class="carousel-control-next js-mdk-carousel-control mt-n24pt" 
+      href="#carousel-feedback" 
+      role="button" 
+      data-slide="next">
+      <span 
+        class="carousel-control-icon material-icons" 
+        aria-hidden="true">keyboard_arrow_right</span>
+      <span class="sr-only">Next</span>
+    </a>
+    <div class="mdk-carousel__content">
+      {% for item in [1,2,3] %}
+      <div class="col-12 col-md-6">
+        {{ card.component(prefix=prefix) }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
