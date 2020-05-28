@@ -66,8 +66,8 @@ router.get("/instructor-edit-quiz/:id", async (req, res) => {
 })
 
 router.post("/update-quiz-answer/:id", async (req, res) => {
-    const correctAnswer = req.body.correctAnswer
     const quizId = req.params.id
+    const correctAnswer = req.body.correctAnswer
     
     const updatedQuiz = await models.Quiz.update({
         correct: correctAnswer
@@ -77,7 +77,7 @@ router.post("/update-quiz-answer/:id", async (req, res) => {
         }
     })
 
-    res.render(`instructor/instructor-edit-quiz/${quizId}`)
+    res.redirect(`/instructor/instructor-edit-quiz/${quizId}`)
 })
 
 router.post("/update-title-name/:id", async (req, res) => {
