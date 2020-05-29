@@ -65,12 +65,15 @@ router.post("/student-take-quiz/:id", async (req, res) => {
     const currentStudentId = currentStudentSession.userId 
     const studentAnswer = req.body.choice
 
-    console.log(studentAnswer + "@@@@@@@@@@@@@@@@")
+    console.log(studentAnswer + " @@@@@@@@@@@@@@@@")
+
+    // models.completedquizes.findAll()
+    // .then((response) => console.log(response))
 
     // need quizId
     // Need userID
     // need student answer
-
+    
     const quiz = await models.Quiz.findOne({
         where: {
             id: quizId
@@ -78,21 +81,25 @@ router.post("/student-take-quiz/:id", async (req, res) => {
     })
 
     const quizValues = quiz.dataValues
-    let isCorrect
-    if (quizValues.correctAnswer == studentAnswer) {
-        isCorrect = 1
-    } else {
+    let isCorrect = 1
+    
+    if (quizValues.correctAnswer != studentAnswer) {
         isCorrect = 0
     }
-    console.log(isCorrect)
-    // console.log(quiz)
 
-    const quizSubmission = models.completedquizes.build({
+    models.completedquizes.create({
         studentId: currentStudentId,
         quizId: quizId,
         studentAnswer: studentAnswer,
         isCorrect: isCorrect
+    }).then((response) => {
+        console.log(response)
     })
+
+
+    // console.log(isCorrect)
+    // console.log(quiz)
+
 
     res.redirect("/student/student-quiz-result")
 })
