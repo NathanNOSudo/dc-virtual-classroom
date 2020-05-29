@@ -10,6 +10,7 @@ const indexRoutes = require("./routes/index")
 const instructorRoutes = require("./routes/instructor")
 const studentRoutes = require("./routes/student")
 const checkAuthorization = require("./middleware/authorization")
+const PORT = process.env.PORT || 3003
 
 console.log("test")
 
@@ -61,6 +62,6 @@ app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 app.set("views", VIEWS_PATH)
 app.set("view engine", "mustache")
 
-app.listen(3003, () => {
+app.listen(PORT, () => {
     console.log("Server is running on http://localhost:3003")
 })
