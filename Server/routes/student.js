@@ -78,12 +78,23 @@ router.post("/student-take-quiz/:id", async (req, res) => {
     })
 
     const quizValues = quiz.dataValues
+    let isCorrect
     if (quizValues.correctAnswer == studentAnswer) {
-        
+        isCorrect = 1
+    } else {
+        isCorrect = 0
     }
+    console.log(isCorrect)
     // console.log(quiz)
 
+    const quizSubmission = models.completedquizes.build({
+        studentId: currentStudentId,
+        quizId: quizId,
+        studentAnswer: studentAnswer,
+        isCorrect: isCorrect
+    })
 
+    res.redirect("/student/student-quiz-result")
 })
 
 

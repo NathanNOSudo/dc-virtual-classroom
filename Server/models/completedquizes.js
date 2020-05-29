@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const completedquizes = sequelize.define('completedquizes', {
     studentId: DataTypes.INTEGER,
     quizId: DataTypes.INTEGER,
-    studentAnswer: DataTypes.STRING
+    studentAnswer: DataTypes.STRING,
+    isCorrect: DataTypes.BOOLEAN
   }, {});
   completedquizes.associate = function(models) {
     // associations can be defined here
