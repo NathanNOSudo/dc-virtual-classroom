@@ -32,7 +32,7 @@ app.use((req, res, next) => {
     next()
 })
 
-app.use('/assets', express.static('assets'))
+rsapp.use('/assets', express.static('assets'))
 // app.use(express.static("assets"))
 
 function checkIfAdmin(req, res, next) {
