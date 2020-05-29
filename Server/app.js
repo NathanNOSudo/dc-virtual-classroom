@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/assets', express.static('assets'))
+// app.use(express.static("assets"))
 
 function checkIfAdmin(req, res, next) {
     if (req.session.userType == "admin") {
