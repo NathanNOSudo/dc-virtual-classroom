@@ -38,7 +38,7 @@
                 </ul>
                 <ul class="nav navbar-nav ml-auto mr-0">
                     <li class="nav-item">
-                        <a href="/login" class="nav-link" data-toggle="tooltip" data-title="Login" data-placement="bottom" data-boundary="window"><i class="material-icons">lock_open</i></a>
+                        <a href="/login" class="nav-link" data-toggle="tooltip" data-title="Login" data-placement="bottom" data-boundary="window"><i class="material-icons">lock_open</i>Login</a>
                     </li>
                     <li class="nav-item">
                         <a href="/register" class="btn btn-outline-white">Get Started</a>
@@ -71,7 +71,7 @@
             <!-- // END Logged in menu items -->
         </div>
     </div>
-</div>
+</div>  
         <!-- // END Header -->
 
         <!-- Header Layout Content -->
@@ -81,7 +81,16 @@
                     <div class="row align-items-center">
                         <div class="flex">
                             <div class="card-title mb-4pt">Guest Log-in</div>
-                            <p class="card-subtitle text-black-70">Login as a guest user to get the full site </p>
+                            <p class="card-subtitle text-black-70">Login as a guest user to easily see the full site from a student's perspective</p>
+                            <div class="col-lg-8 d-flex align-items-center">
+                                <div class="flex" style="max-width: 100%">
+                                    <form action="/login" method="POST">
+                                        <input type="hidden" name="email" value="guest123@gmail.com">
+                                        <input type="hidden" name="password" value="strongpassword123">
+                                        <button type="submit" class="btn btn-accent">Guest Login</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
