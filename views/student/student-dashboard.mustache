@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Dashboard</title>
+    {{> header}}
+
+</head>
+
+<body class="layout-sticky-subnav layout-default ">
+
+    {{> preloader}}
+
+    <!-- Header Layout -->
+    <div class="mdk-header-layout js-mdk-header-layout">
+
+        <!-- Header -->
+
+        {{> headernav-v2}}
+
+        <!-- // END Header -->
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+
+
+
+            <div class="pt-32pt">
+                <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+                    <div class="flex d-flex flex-column flex-sm-row align-items-center mb-24pt mb-md-0">
+
+                        <div class="mb-24pt mb-sm-0 mr-sm-24pt">
+                            <h2 class="mb-0">Dashboard</h2>
+
+                            <ol class="breadcrumb p-0 m-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                                <li class="breadcrumb-item active">
+
+                                    Dashboard
+
+                                </li>
+
+                            </ol>
+
+                        </div>
+                    </div>
+
+
+                    <div class="row" role="tablist">
+                        <div class="col-auto">
+                            <a href="fixed-student-my-courses.html" class="btn btn-outline-secondary">My Courses</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container page__container">
+                <div class="page-separator">
+                    <div class="page-separator__text">Quizzes</div>
+                </div>
+
+                <div class="row card-group-row">
+                {{#quizzes}}
+                    <div class="card-group-row__col col-md-6">
+                        <div class="card card-group-row__card card-sm">
+                            <div class="card-body d-flex align-items-center">
+                                <a href="fixed-student-take-quiz.html" class="avatar overlay overlay--primary avatar-4by3 mr-12pt">
+                                    <img src="../assets/images/paths/typescript_200x168.png" alt="Introduction to TypeScript" class="avatar-img rounded">
+                                    <span class="overlay__content"></span>
+                                </a>
+                                <div class="flex mr-12pt">
+                                    <a class="card-title" href="/student/student-take-quiz/{{id}}">{{quizName}}</a>
+                                    <div class="card-subtitle text-50">3 days ago</div>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="lead text-headings lh-1">2.8</span>
+                                    <!-- Score 
+                                    <small class="text-50 text-uppercase text-headings">Score</small>
+                                    -->
+                                </div>
+                            </div>
+
+                            {{! <div class="progress rounded-0" style="height: 4px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 37%;" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> }}
+
+                            <div class="card-footer">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex mr-2">
+                                        <a href="/student/student-take-quiz/{{id}}" class="btn btn-light btn-sm">
+
+                                            <i class="material-icons icon--left">refresh</i> Start
+
+                                        </a>
+                                    </div>
+
+                                    <div class="dropdown">
+                                        <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_horiz</i></a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="/student/student-take-quiz/{{id}}" class="dropdown-item">Continue</a>
+                                            <a href="student-quiz-result-details.html" class="dropdown-item">View Result</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="/student/student-take-quiz/{{id}}" class="dropdown-item text-danger">Reset Quiz</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                {{/quizzes}}
+                </div>
+
+                <div class="mb-32pt">
+                    <ul class="pagination justify-content-start pagination-xsm m-0">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true" class="material-icons">chevron_left</span>
+                                <span>Prev</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Page 1">
+                                <span>1</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Page 2">
+                                <span>2</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span>Next</span>
+                                <span aria-hidden="true" class="material-icons">chevron_right</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- // END Header Layout Content -->
+    <!-- // END Header Layout -->
+
+    {{> footer}}
+
+
+    <!-- drawer -->
+    {{> drawer}}
+    <!-- // END drawer -->
+
+
+    <!-- jQuery -->
+    <script src="../assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../assets/vendor/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="../assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="../assets/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="../assets/vendor/material-design-kit.js"></script>
+
+    <!-- Fix Footer -->
+    <script src="../assets/vendor/fix-footer.js"></script>
+
+    <!-- App JS -->
+    <script src="../assets/js/app.js"></script>
+
+
+    <!-- Global Settings -->
+    <script src="/assets/js/settings.js"></script>
+
+    <!-- Flatpickr -->
+    <script src="/assets/vendor/flatpickr/flatpickr.min.js"></script>
+    <script src="/assets/js/flatpickr.js"></script>
+
+    <!-- Moment.js -->
+    <script src="/assets/vendor/moment.min.js"></script>
+    <script src="/assets/vendor/moment-range.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="/assets/vendor/Chart.min.js"></script>
+    <script src="/assets/js/chartjs.js"></script>
+
+    <!-- Chart.js Samples -->
+    <script src="/assets/js/page.student-dashboard.js"></script>
+
+    <!-- List.js -->
+    <script src="/assets/vendor/list.min.js"></script>
+    <script src="/assets/js/list.js"></script>
+
+    <!-- Tables -->
+    <script src="/assets/js/toggle-check-all.js"></script>
+    <script src="/assets/js/check-selected-row.js"></script>
+
+</body>
+
+</html>

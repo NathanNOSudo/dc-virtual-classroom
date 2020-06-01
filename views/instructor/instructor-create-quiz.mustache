@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Create Quiz</title>
+    {{> header}}
+
+</head>
+<body class="layout-sticky-subnav layout-default ">
+
+    {{> preloader}}
+
+    <!-- Header Layout -->
+        {{> headernav-v2}}
+
+        <!-- Header Layout Content -->
+        <div class="mdk-header-layout__content page-content ">
+            <div class="pt-32pt">
+                <div class="container page__container d-flex flex-column flex-md-row align-items-center text-center text-sm-left">
+                    <div class="flex d-flex flex-column flex-sm-row align-items-center">
+
+                        <div class="mb-24pt mb-sm-0 mr-sm-24pt">
+                            <h2 class="mb-0">Create Quiz</h2>
+
+                            <ol class="breadcrumb p-0 m-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+
+                                <li class="breadcrumb-item active">
+
+                                    Create Quiz
+
+                                </li>
+
+                            </ol>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="page-section border-bottom-2">
+                <div class="container page__container">
+                    <div class="row align-items-start">
+                        <div class="col-md-8">
+                            <!-- <div class="page-separator">
+                                <div class="page-separator__text">Quiz Name</div>
+                            </div>
+                            <form method="POST" action="/instructor/update-title-name">   
+                                <input type="text" name="quizName" placeholder="Quiz Title">
+                                <input type="hidden" name="quizId">
+                                <button type="submit">Save Title Name</button>
+                            </form> -->
+                            <!-- <div class="page-separator">
+                                <div class="page-separator__text">Questions</div>
+                            </div> -->
+                            <div class="page-separator">
+                                <div class="page-separator__text">New Quiz</div>
+                            </div>
+                            <div class="card card-body">
+                                <form method="POST" action="/instructor/instructor-create-quiz">   
+                                    <div class="form-group">
+                                        <label class="form-label">Quiz Title</label>
+                                        <input type="text" class="form-control" placeholder="Quiz Title" name="quizTitle" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Question</label>
+                                        <!-- <textarea class="form-control" rows="3" placeholder="Question"></textarea> -->
+                                        <div style="height: 150px;" class="mb-0" data-toggle="quill" data-quill-placeholder="Question" name="questionField" required>
+                                            An angular 2 project written in typescript is* transpiled to javascript duri*ng the build process. Which of the following additional features are provided to the developer while programming on typescript over javascript?
+                                        </div>
+                                        <small class="form-text text-muted">Shortly describe the question.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Question Type</label>
+                                        <select name="category" class="form-control custom-select">
+                                            <option value="vuejs">Multiple Choice</option>
+                                            {{! <option value="vuejs">Single Answer</option>
+                                            <option value="vuejs">Essay</option> }}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="select01">Answers</label>
+                                        <input type="text" class="form-control" placeholder="Quiz Choice A" name="choiceA" required>
+                                        <input type="text" class="form-control" placeholder="Quiz Choice B" name="choiceB" required>
+                                        <input type="text" class="form-control" placeholder="Quiz Choice C" name="choiceC" required>
+                                        <input type="text" class="form-control" placeholder="Quiz Choice D" name="choiceD" required>
+                                        <label class="form-label" for="select01">Correct Answer</label>
+                                        <input type="text" class="form-control" placeholder="Correct Answer (A, B, C, D)" name="correctAnswer" required>
+                                    </div>
+                                    <div class="page-separator">
+                                        <div class="page-separator__text">Assign to student</div>
+                                    </div>
+                                <div class="row mb-32pt">
+                                    <div class="col-lg-8 d-flex align-items-center">
+                                        <div class="flex" style="max-width: 100%">
+                                            <div class="card m-0">
+                                                <div class="table-responsive" data-toggle="lists" data-lists-sort-by="js-lists-values-employee-name" data-lists-values='["js-lists-values-employee-name", "js-lists-values-employer-name", "js-lists-values-projects", "js-lists-values-activity", "js-lists-values-earnings"]'>
+                                                    <table class="table mb-0 thead-border-top-0 table-nowrap">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 18px;" class="pr-0">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input js-toggle-check-all" data-target="#toggle" id="customCheckAlltoggle">
+                                                                        <label class="custom-control-label" for="customCheckAlltoggle"><span class="text-hide">Toggle all</span></label>
+                                                                    </div>
+                                                                </th>
+                                                                <th>
+                                                                    <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-employee-name">Employee</a>
+                                                                </th>
+                                                                <th style="width: 37px;">Status</th>
+                                                                <th style="width: 120px;">
+                                                                    <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-activity">Activity</a>
+                                                                </th>
+                                                                <th style="width: 51px;">
+                                                                    <a href="javascript:void(0)" class="sort" data-sort="js-lists-values-earnings">Earnings</a>
+                                                                </th>
+                                                                <th style="width: 24px;" class="pl-0"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody class="list" id="toggle">
+                                                            <tr class="selected">
+                                                                <td class="pr-0">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input js-check-selected-row" checked="" id="customCheck1_toggle1">
+                                                                        <label class="custom-control-label" for="customCheck1_toggle1"><span class="text-hide">Check</span></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="media flex-nowrap align-items-center" style="white-space: nowrap;">
+                                                                        <div class="avatar avatar-sm mr-8pt">
+                                                                            <img src="assets/images/people/110/guy-1.jpg" alt="Avatar" class="avatar-img rounded-circle">
+                                                                        </div>
+                                                                        <div class="media-body">
+                                                                            <div class="d-flex flex-column">
+                                                                                <p class="mb-0"><strong class="js-lists-values-employee-name">Michael Smith</strong></p>
+                                                                                <small class="js-lists-values-employee-email text-50">lorna_kirlin@nora.biz</small>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="" class="chip chip-outline-secondary">Admin</a>
+                                                                </td>
+                                                                <td class="text-50 js-lists-values-activity small">3 days ago</td>
+                                                                <td class="js-lists-values-earnings small">$12,402</td>
+                                                                <td class="text-right pl-0">
+                                                                    <a href="" class="text-50"><i class="material-icons">more_vert</i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="pr-0">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input js-check-selected-row" id="customCheck1_toggle2">
+                                                                        <label class="custom-control-label" for="customCheck1_toggle2"><span class="text-hide">Check</span></label>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="media flex-nowrap align-items-center" style="white-space: nowrap;">
+                                                                        <div class="avatar avatar-sm mr-8pt">
+                                                                            <span class="avatar-title rounded-circle">CS</span>
+                                                                        </div>
+                                                                        <div class="media-body">
+
+
+                                                                            <div class="d-flex flex-column">
+                                                                                <p class="mb-0"><strong class="js-lists-values-employee-name">Connie Smith</strong></p>
+                                                                                <small class="js-lists-values-employee-email text-50">paolo.zieme@gmail.com</small>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+
+
+
+                                                                <td>
+
+
+                                                                    <a href="" class="chip chip-outline-secondary">User</a>
+
+
+                                                                </td>
+
+                                                                <td class="text-50 js-lists-values-activity small">1 week ago</td>
+                                                                <td class="js-lists-values-earnings small">$1,943</td>
+                                                                <td class="text-right pl-0">
+                                                                    <a href="" class="text-50"><i class="material-icons">more_vert</i></a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+
+                                                                <td class="pr-0">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input js-check-selected-row" id="customCheck1_toggle3">
+                                                                        <label class="custom-control-label" for="customCheck1_toggle3"><span class="text-hide">Check</span></label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+
+                                                                    <div class="media flex-nowrap align-items-center" style="white-space: nowrap;">
+                                                                        <div class="avatar avatar-sm mr-8pt">
+
+                                                                            <img src="assets/images/people/110/guy-2.jpg" alt="Avatar" class="avatar-img rounded-circle">
+
+
+                                                                        </div>
+                                                                        <div class="media-body">
+
+
+                                                                            <div class="d-flex flex-column">
+                                                                                <p class="mb-0"><strong class="js-lists-values-employee-name">John Connor</strong></p>
+                                                                                <small class="js-lists-values-employee-email text-50">vida_glover@gmail.com</small>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+
+
+
+                                                                <td>
+
+
+                                                                    <a href="" class="chip chip-outline-secondary">Manager</a>
+
+
+                                                                </td>
+
+                                                                <td class="text-50 js-lists-values-activity small">2 weeks ago</td>
+                                                                <td class="js-lists-values-earnings small">$1,401</td>
+                                                                <td class="text-right pl-0">
+                                                                    <a href="" class="text-50"><i class="material-icons">more_vert</i></a>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr class="selected">
+
+                                                                <td class="pr-0">
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input js-check-selected-row" checked="" id="customCheck1_toggle4">
+                                                                        <label class="custom-control-label" for="customCheck1_toggle4"><span class="text-hide">Check</span></label>
+                                                                    </div>
+                                                                </td>
+
+                                                                <td>
+
+                                                                    <div class="media flex-nowrap align-items-center" style="white-space: nowrap;">
+                                                                        <div class="avatar avatar-sm mr-8pt">
+
+
+                                                                            <span class="avatar-title rounded-circle">LB</span>
+
+                                                                        </div>
+                                                                        <div class="media-body">
+
+
+                                                                            <div class="d-flex flex-column">
+                                                                                <p class="mb-0"><strong class="js-lists-values-employee-name">Laza Bogdan</strong></p>
+                                                                                <small class="js-lists-values-employee-email text-50">annabell.kris@yahoo.com</small>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                </td>
+
+
+
+                                                                <td>
+
+
+                                                                    <a href="" class="chip chip-outline-secondary">Admin</a>
+
+
+                                                                </td>
+
+                                                                <td class="text-50 js-lists-values-activity small">3 weeks ago</td>
+                                                                <td class="js-lists-values-earnings small">$22,402</td>
+                                                                <td class="text-right pl-0">
+                                                                    <a href="" class="text-50"><i class="material-icons">more_vert</i></a>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- {{#myUsers}}
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input id="customCheck01" type="checkbox" class="custom-control-input">
+                                            <label for="customCheck01" class="custom-control-label">{{username}}</label>
+                                        </div>
+                                    </div>
+                                    {{/myUsers}} -->
+                                        <!-- <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Assign to Student</label>
+                                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="emailAddress">
+                                            <option selected>Select student...</option>
+                                            {{#users}}
+                                                <option>{{username}}</option>
+                                            {{/users}}
+                                    </div> -->
+                                    <div>
+                                        <button class="btn btn-accent" type="submit"> Create Quiz </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // END Header Layout Content -->
+
+
+        {{> footer}}
+
+    </div>
+<!-- // END Header Layout -->
+
+    <!-- Start drawer -->
+    {{> drawer}}
+    <!-- // END drawer -->
+
+
+    <!-- jQuery -->
+    <script src="../assets/vendor/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="/assets/vendor/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap.min.js"></script>
+
+    <!-- Perfect Scrollbar -->
+    <script src="/assets/vendor/perfect-scrollbar.min.js"></script>
+
+    <!-- DOM Factory -->
+    <script src="/assets/vendor/dom-factory.js"></script>
+
+    <!-- MDK -->
+    <script src="/assets/vendor/material-design-kit.js"></script>
+
+    <!-- Fix Footer -->
+    <script src="/assets/vendor/fix-footer.js"></script>
+
+    <!-- App JS -->
+    <script src="/assets/js/app.js"></script>
+
+
+    <!-- Quill -->
+    <script src="/assets/vendor/quill.min.js"></script>
+    <script src="/assets/js/quill.js"></script>
+    <!-- Select2 -->
+    <script src="/assets/vendor/select2/select2.min.js"></script>
+    <script src="/assets/js/select2.js"></script>
+
+    <!-- Highlight.js -->
+    <script src="/assets/js/hljs.js"></script>
+
+</body>
+
+</html>    
