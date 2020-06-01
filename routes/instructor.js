@@ -7,15 +7,6 @@ router.get("/instructor-dash", async (req, res) => {
     const quizValues = quiz.map((ele) => ele.dataValues)
     res.render("instructor/instructor-dash", { quizzes: quizValues })
 })
-router.get("/instructor-courses", (req, res) => {
-    res.render("instructor/instructor-courses")
-})
-
-router.get("/instructor-quizzes", async (req, res) => {
-    const quiz = await models.Quiz.findAll()
-    const quizValues = quiz.map((ele) => ele.dataValues)
-    res.render("instructor/instructor-quizzes", { quizzes: quizValues })
-})
 
 router.get("/instructor-quizzes/:id", async (req, res) => {
     const quizId = req.params.id
@@ -25,10 +16,6 @@ router.get("/instructor-quizzes/:id", async (req, res) => {
         }
     })
     res.render("instructor/instructor-quiz", quiz.dataValues)
-})
-
-router.get("/instructor-edit-course", (req, res) => {
-    res.render("instructor/instructor-edit-course")
 })
 
 // EDIT quiz functionality
@@ -117,6 +104,26 @@ router.post("/instructor-create-quiz", async (req, res) => {
     } else {
         res.render('/instructor/instructor-create-quiz', { message: 'Unable to add quiz' })
     }
+})
+
+router.get("/instructor-delete-quiz/:id", async (req, res) => {
+    let quizId = req.params.id
+
+    await models.completedquizes.update({
+        quizId: null
+    }, {
+        where: {
+            quizId: quizId
+        }
+    }).then(() => {
+        models.Quiz.destroy({
+            where: {
+                id: quizId
+            }
+        })
+    })
+
+    res.redirect("/instructor/instructor-dash")
 })
 
 module.exports = router

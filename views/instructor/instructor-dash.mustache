@@ -11,7 +11,6 @@
     <div class="mdk-header-layout js-mdk-header-layout">
 
         <!-- Header -->
-        <div id="header" class="mdk-header js-mdk-header mb-0" data-fixed data-effects="">
             {{> headernav-v2}}
         <!-- // END Header -->
 
@@ -56,18 +55,16 @@
                             <div class="card-footer">
                                 <div class="d-flex align-items-center">
                                     <div class="flex mr-2">
-                                        <a href="#" class="btn btn-light btn-sm">
-                                            <i class="material-icons icon--left">playlist_add_check</i> Review
-                                            <span class="badge badge-dark badge-notifications ml-2">5</span>
+                                        <a href="/instructor/instructor-edit-quiz/{{id}}" class="btn btn-light btn-sm">
+                                            <i class="material-icons icon--left">edit</i> Edit Quiz
                                         </a>
                                     </div>
                                     <div class="dropdown">
                                         <a href="#" data-toggle="dropdown" data-caret="false" class="text-muted"><i class="material-icons">more_horiz</i></a>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="javascript:void(0)" class="dropdown-item">Review Quiz</a>
-                                            <a href="/instructor/instructor-edit-quiz/{{:id}}" class="dropdown-item">Edit Quiz</a>
+                                            <a href="/instructor/instructor-edit-quiz/{{id}}" class="dropdown-item">Edit Quiz</a>
                                             <div class="dropdown-divider"></div>
-                                            <a href="javascript:void(0)" class="dropdown-item text-danger">Delete Quiz</a>
+                                            <a href="/instructor/instructor-delete-quiz/{{id}}" class="dropdown-item text-danger">Delete Quiz</a>
                                         </div>
                                     </div>
                                 </div>
