@@ -1,12 +1,8 @@
-# Project Title
+# DC-Virtual Classroom
 
-One Paragraph of project description goes here
+A project intended to create a all in one app for students to learn virtually and communicate with their instructors and peers. 
 
-This initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2), but as
-I can no longer open that page as there are too many comments, I have
-moved it here.
-
+(Will update the url as soon as possible. For some reason heroku and our app are not getting along well.)
 ## Summary
 
   - [Getting Started](#getting-started)
@@ -68,6 +64,7 @@ Explain what these tests test and why
 Add additional notes about how to deploy this on a live system
 
 ## Built With
+  - HTML, CSS, Node.js, Mustache, postresql, Bootstrap.  
 
   - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
     for the Code of Conduct
@@ -87,12 +84,13 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
-  - **Billie Thompson** - *Provided README Template* -
+  - **Billie Thompson** - *THANK YOU FOR THE README TEMPLATE* -
     [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of
 [contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
 who participated in this project.
+(https://github.com/Vpetsev96)
 
 ## License
 
@@ -102,6 +100,6 @@ details
 
 ## Acknowledgments
 
-  - Hat tip to anyone whose code was used
-  - Inspiration
-  - etc
+  - Hat tip to Our instructor Mr. Azzam, and our DiR's Austin and Ian over at Digitalcrafts. 
+  - This was inspired by the current events in the world with the hopes of making it easier on everyone in these not So easy times.
+  - 
