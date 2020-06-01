@@ -1,5 +1,6 @@
 # DC-Virtual Classroom   ![codeblooded](https://img.shields.io/badge/VERIFIED-Code_Blooded-brightgreen?style=for-the-badge&logo=checkmarx)  Certified [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) 
 
+
 A project intended to create a all in one app for students to learn virtually and communicate with their instructors and peers. 
 
 (Will update the url as soon as possible. For some reason heroku and our app are not getting along well.)
@@ -89,17 +90,6 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
-  - **Mr. Azam** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
-    [Mr. Azam](https://github.com/azamsharp)
-    
-  - **Ian Sear** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
-    [Ian Sear](https://github.com/Iansear)
-    
-  - **Austin Denny** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
-    [Austin Denny](https://github.com/Abdenny)
-  
-  - **Billie Thompson** - *THANK YOU FOR THE README TEMPLATE* -
-    [PurpleBooth](https://github.com/PurpleBooth)
 
 See also the list of
 [contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
@@ -113,6 +103,19 @@ Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
 details
 
 ## Acknowledgments
+
+
+  - **Mr. Azam** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Mr. Azam](https://github.com/azamsharp)
+    
+  - **Ian Sear** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Ian Sear](https://github.com/Iansear)
+    
+  - **Austin Denny** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Austin Denny](https://github.com/Abdenny)
+  
+  - **Billie Thompson** - *THANK YOU FOR THE README TEMPLATE* -
+    [PurpleBooth](https://github.com/PurpleBooth)
 
   - Hat tip to Our instructor Mr. Azzam, and our DiR's Austin and Ian over at Digitalcrafts. 
   - This was inspired by the current events in the world with the hopes of making it easier on everyone in these not So easy times.
