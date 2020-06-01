@@ -1,4 +1,4 @@
-# DC-Virtual Classroom  Certified [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+# DC-Virtual Classroom   ![codeblooded](https://img.shields.io/badge/VERIFIED-Code_Blooded-brightgreen?style=for-the-badge&logo=checkmarx)  Certified [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) 
 
 A project intended to create a all in one app for students to learn virtually and communicate with their instructors and peers. 
 
