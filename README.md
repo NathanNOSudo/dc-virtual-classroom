@@ -29,23 +29,29 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development
-env running
+Quickly get the development env running with:
 
-Say what the step will be
+This will install the node modules and start hosting on https://localhost:3003
 
-    Give the example
+   npm install && nodemon Server/app.js
 
-And repeat
+And repeat rs to refresh while making changes
 
-    until finished
+    rs
 
-End with an example of getting some data out of the system or using it
-for a little demo
+Create your account. By default student accounts will be created. change to Admin in database if you want an instructor account.
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Create a quiz with a instructor account
+
+Assign the quiz to a student.
+
+Take the quiz as a student.
+
+Check quiz results.
+
+Profit.
 
 ### Break down into end to end tests
 
