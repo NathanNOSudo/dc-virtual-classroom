@@ -89,6 +89,15 @@ repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
 
 ## Authors
 
+  - **Mr. Azam** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Mr. Azam](https://github.com/azamsharp)
+    
+  - **Ian Sear** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Ian Sear](https://github.com/Iansear)
+    
+  - **Austin Denny** - *THANK YOU FOR SHARING YOUR KNOWLEDGE* -
+    [Austin Denny](https://github.com/Abdenny)
+  
   - **Billie Thompson** - *THANK YOU FOR THE README TEMPLATE* -
     [PurpleBooth](https://github.com/PurpleBooth)
 
