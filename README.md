@@ -25,7 +25,7 @@ for notes on how to deploy the project on a live system.
 
 What things you need to install the software and how to install them
 
-    Give examples
+    npm install && nodemon Server/app.js
 
 ### Installing
 
@@ -33,7 +33,6 @@ Quickly get the development env running with:
 
 This will install the node modules and start hosting on https://localhost:3003
 
-   npm install && nodemon Server/app.js
 
 And repeat rs to refresh while making changes
 
