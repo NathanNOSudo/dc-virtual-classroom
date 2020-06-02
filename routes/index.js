@@ -9,6 +9,10 @@ router.get("/", (req, res) => {
     res.render("main")
 })
 
+router.get("/comingSoon", (req, res) => {
+    res.render("comingSoon")
+})
+
 router.get("/login", (req, res) => {
     res.render("login")
 })
