@@ -54,6 +54,11 @@ app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'))
 app.set("views", VIEWS_PATH)
 app.set("view engine", "mustache")
 
+app.get("/signout", (req, res) => {
+    req.session.destroy();
+    res.redirect("/");
+})
+
 app.listen(PORT, () => {
     console.log("Server is running on http://localhost:3003")
 })
