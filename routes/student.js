@@ -25,7 +25,6 @@ router.get("/student-quiz-result", (req, res) => {
 
 router.get("/student-take-quiz/:id", async (req, res) => {
     const quizId = req.params.id
-    const currentStudentSession = req.session.user
 
     const quiz = await models.Quiz.findOne({
         where: {

@@ -61,9 +61,15 @@ router.post("/update-title-name/:id", async (req, res) => {
 
 // Create Quiz
 router.get("/instructor-create-quiz", async (req, res) => {
-    const myUsers = await models.User.findAll()
+    const myUsers = await models.User.findAll({
+        where: {
+            userType: "student"
+        }
+    })
     const userIds = myUsers.map((ele) => ele.dataValues.username)
-    res.render("instructor/instructor-create-quiz", userIds)
+    console.log(userIds)
+
+    res.render("instructor/instructor-create-quiz", { users: myUsers })
 })
 
 router.post("/instructor-create-quiz", async (req, res) => {
