@@ -4,19 +4,20 @@ const models = require("../models")
 
 router.get("/student-dashboard/", async (req, res) => {
     const currentStudentSession = req.session.user
+    console.log(currentStudentSession)
     const currentStudentId = currentStudentSession.userId 
+    console.log(currentStudentId)
+
+    // Quizzes are not loading. Something to do with FindAll vs. FindOne. Findall works when there's more than 1 quiz assigned to the same student.
     const studentQuizzes = await models.Quiz.findAll({
         where: {
             assignedTo: currentStudentId
         }
     })
-
+    console.log(studentQuizzes)
     const quizValues = studentQuizzes.map((ele) => ele.dataValues)
+    console.log(quizValues)
     res.render("student/student-dashboard", { quizzes: quizValues })
-})
-
-router.get("/student-quiz-result-details", (req, res) => {
-    res.render("student/student-quiz-result-details")
 })
 
 router.get("/student-quiz-result", (req, res) => {

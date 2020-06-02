@@ -103,6 +103,8 @@ router.post("/instructor-create-quiz", async (req, res) => {
         assignedTo: userId
     })
 
+    // models.Quiz.increment('questionNum', { where: { questionNum: null}})
+
     const persistedQuiz = await quiz.save()
 
     if (persistedQuiz != null) {

@@ -15,7 +15,7 @@
                             src="../../assets/images/illustration/student/128/white.svg" alt="logo"
                             class="img-fluid" /></span>
                 </span>
-                <span class="d-none d-lg-block">Luma</span>
+                <span class="d-none d-lg-block">Virtual Classroom</span>
             </a>
             <!-- Not logged in Menu Items -->
             {{^isAuthenticated}}
@@ -37,6 +37,11 @@
             <!-- Logged In Menu Items -->
             {{#isAuthenticated}}
                 <!-- Notifications dropdown -->
+                <ul class="nav navbar-nav d-none d-sm-flex flex justify-content-start ml-8pt">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                </ul>
                 <div class="flex"></div>
                 <!-- // END Notifications dropdown -->
                 <div class="nav-item dropdown">
