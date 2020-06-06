@@ -83,11 +83,39 @@ router.post("/instructor-create-quiz", async (req, res) => {
     const question = req.body.questionField
     const emailAdd = req.body.emailAdd
 
-    const userObject = await models.User.findOne({
-        where: {
-            username: emailAdd
+    console.log(emailAdd)
+
+    console.log(typeof (emailAdd))
+
+    let userObject
+    // const quizValues = quiz.map((ele) => ele.dataValues)
+    
+    if (typeof (emailAdd) == "object") {
+        console.log("multiple users")
+        // parse emailadd array 
+        console.log(emailAdd[1])
+        for (let i = 0; i < emailAdd.length; i++) {
+            models.User.findAll({
+                where: {
+                    username: emailAdd
+                }
+            }).then((response) => {
+                console.log(response[0].dataValues)
+                userObject.push(response[0].dataValues)
+            })
         }
-    })
+        console.log(userObject)
+
+    } else {
+        console.log("not multiple")
+        userObject = await models.User.findOne({
+            where: {
+                username: emailAdd
+            }
+        })
+    }
+
+    console.log(userObject.dataValues)
 
     const userId = userObject.dataValues.id
 

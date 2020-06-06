@@ -81,11 +81,11 @@
                                     <div class="col-lg-8 d-flex align-items-center">
                                         <div class="flex" style="max-width: 100%">
                                             <div class="form-group">
-                                                <label class="form-label" for="select01">Basic</label>
-                                                <select id="select01" data-toggle="select" class="form-control">
-                                                {{#users}}
-                                                    <option>{{username}}</option>
-                                                {{/users}}
+                                                <label class="form-label" for="select03">Assign to Students</label>
+                                                <select id="select03" data-toggle="select" multiple class="form-control custom-select" name="emailAdd">
+                                                    {{#users}}
+                                                        <option>{{username}}</option>
+                                                    {{/users}}
                                                 </select>
                                             </div>
                                         </div>
